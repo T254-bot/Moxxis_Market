@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moxxi's Market</title>
+</head>
+<body>
+    {% for item in items_for_sale %}
+        {{ item.item_name }}<br>
+        {{ item.item_score }}<br>
+        {{ item.elemental }}<br>
+        {{ item.damage }}<br>
+        {{ item.accuracy }}<br>
+        {{ item.handling }}<br>
+        {{ item.reload_time }}<br>
+        {{ item.fire_rate }}<br>
+        {{ item.magazine_size }}<br>
+
+    {% endfor %}
+</body>
+</html>
