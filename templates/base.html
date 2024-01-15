@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
@@ -10,9 +11,24 @@
 </head>
 <body>
 
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">MOXXI'S</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="">SIGN UP</a></li>
+                    <li><a href="">LOGIN</a></li>
+                    <li><a href="">PROFILE</a></li>
+                    <li><a href="">ABOUT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     {% block content %}
     {% endblock %}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}

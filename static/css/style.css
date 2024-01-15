@@ -1,3 +1,26 @@
-body {
-    background-color: red;
+.landing-bgimg {
+    background-image: url(../images/main-landing-bg-m.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+
+}
+
+h1 {
+    margin: 0;
+}
+
+
+/* ----------------------------------------------------- Media Query's */
+
+
+@media (min-width: 576px) {
+    .landing-bgimg {
+        background-image: url(../images/main-landing-bg-t.jpg)
+    }
+}
+
+@media (min-width: 992px) {
+    .landing-bgimg {
+        background-image: url(../images/main-landing-bg-d.jpg);
+    }
 }

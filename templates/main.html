@@ -1,8 +1,15 @@
 {% extends "base.html"%}
 {% block content %}
 
+    <div class="landing-bgimg">
+        <h1>Welcome to Moxxi's Market!</h1>
+        <p>New here? SIGN UP</p>
+        <p>Have an account? LOGIN</p>
 
-    {% for item in items_for_sale %}
+        <p>You MUST have an account and be logged in before</p>
+    </div>
+
+    <!-- {% for item in items_for_sale %}
         {{ item.item_name }}<br>
         {{ item.item_score }}<br>
         {{ item.elemental }}<br>
@@ -12,6 +19,6 @@
         {{ item.reload_time }}<br>
         {{ item.fire_rate }}<br>
         {{ item.magazine_size }}<br>
-    {% endfor %}
+    {% endfor %} -->
 
 {% endblock %}
