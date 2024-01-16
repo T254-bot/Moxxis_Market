@@ -13,7 +13,7 @@
 .landing-bgimg {
     background-image: url(../images/main-landing-bg-m.jpg);
     background-repeat: no-repeat;
-    height: 100%;
+    height: 950px;
 
 }
 
@@ -21,6 +21,40 @@
     font-family: 'countach', sans-serif;
     color: white;
 }
+
+
+.landing-header-div {
+    padding-top: 3rem;
+    width: 10rem;
+}
+
+.landing-header {
+    font-size: 75px;
+    margin: 0 0 0 1rem;
+}
+
+.landing-signup-div {
+    padding-top: 2rem;
+    margin: 0, 0, 0, 1rem ;
+}
+
+.landing-signup {
+    text-align: center;
+}
+
+.landing-login-div {
+    padding-top: 2rem;
+    margin: 0, 0, 0, 1rem ;
+}
+
+.landing-login {
+    text-align: center;
+}
+
+.landing-message {
+    margin-top: 10rem;
+}
+
 
 
 /* ----------------------------------------------------- Media Query's */
