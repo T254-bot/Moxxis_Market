@@ -12,17 +12,25 @@
 <body>
 
     <header>
-        <nav>
+        <nav >
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">MOXXI'S</a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="">SIGN UP</a></li>
-                    <li><a href="">LOGIN</a></li>
-                    <li><a href="">PROFILE</a></li>
-                    <li><a href="">ABOUT</a></li>
+                <a href="#!" class="brand-logo center">Logo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="">Login</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href="">Sign up</a></li>
+                    <li><a href="">Mobile</a></li>
                 </ul>
             </div>
         </nav>
+        
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="">Login</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Sign up</a></li>
+            <li><a href="">Mobile</a></li>
+        </ul>
     </header>
 
     {% block content %}
