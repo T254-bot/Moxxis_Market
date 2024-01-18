@@ -1,3 +1,14 @@
+/* ----------------------------------------------------- Misc */
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.flashes h4 {
+    line-height: 2;
+}
+
+/* ----------------------------------------------------- Fonts */
+
 @font-face {
     font-family: 'countach';
     src: url(../fonts/Countach-Italic-TRIAL-BF63c5f2084b0d3.otf) format('opentype');
@@ -56,6 +67,10 @@
 }
 
 /* ----------------------------------------------------- Sign up */
+
+/* ----------------------------------------------------- Profile */
+
+/* ----------------------------------------------------- Login */
 
 .login-bg {
     background-image: url(../images/login-bg.png);
