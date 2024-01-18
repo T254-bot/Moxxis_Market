@@ -55,7 +55,11 @@
     margin-top: 10rem;
 }
 
+/* ----------------------------------------------------- Sign up */
 
+.login-bg {
+    background-image: url(../images/login-bg.png);
+}
 
 /* ----------------------------------------------------- Media Query's */
 
