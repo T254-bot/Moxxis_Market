@@ -14,8 +14,11 @@
     src: url(../fonts/Countach-Italic-TRIAL-BF63c5f2084b0d3.otf) format('opentype');
 }
 
-.header-font {
+.countach-font {
     font-family: 'countach', sans-serif;
+}
+
+.white {
     color: white;
 }
 
