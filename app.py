@@ -25,6 +25,12 @@ def get_items():
     return render_template("main.html", items_for_sale=items_for_sale)
 
 
+@app.route("/main_page")
+def main_page():
+    return render_template("main.html")
+
+
+
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
