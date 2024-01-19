@@ -18,12 +18,15 @@
             <div class="nav-wrapper">
                 <a href="{{ url_for('main_page') }}" class="brand-logo center">Logo</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="">Profile</a></li>
+                <ul class="right hide-on-med-and-down">i>
+                {% if session.user %}
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('sign_up') }}">Sign up</a></li>
+                {% endif %}
                 </ul>
                 <ul class="hide-on-med-and-down">
-                    <li><a href="{{ url_for('sign_up') }}">Sign up</a></li>
                     <li><a href="">Market</a></li>
                 </ul>
             </div>
