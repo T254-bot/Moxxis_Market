@@ -18,7 +18,7 @@
     font-family: 'countach', sans-serif;
 }
 
-.white {
+.white-font {
     color: white;
 }
 
@@ -76,7 +76,7 @@
 /* ----------------------------------------------------- Login */
 
 .login-bg {
-    background-image: url(../images/login-bg.png);
+    background-image: url(../images/login-bg-m.png);
 }
 
 /* ----------------------------------------------------- Media Query's */
@@ -84,7 +84,11 @@
 
 @media (min-width: 576px) {
     .landing-bgimg {
-        background-image: url(../images/main-landing-bg-t.jpg)
+        background-image: url(../images/main-landing-bg-t.jpg);
+    }
+
+    .login-bg {
+        background-image: url(../images/login-bg-t.png);
     }
 }
 
@@ -92,4 +96,8 @@
     .landing-bgimg {
         background-image: url(../images/main-landing-bg-d.jpg);
     }
+
+    .login-bg {
+        background-image: url(../images/login-bg-d.png)
+    }    
 }
