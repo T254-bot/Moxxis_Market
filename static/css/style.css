@@ -110,18 +110,10 @@
     .landing-bgimg {
         background-image: url(../images/main-landing-bg-t.jpg);
     }
-
-    .login-bg {
-        background-image: url(../images/login-bg-t.png);
-    }
 }
 
 @media (min-width: 992px) {
     .landing-bgimg {
         background-image: url(../images/main-landing-bg-d.jpg);
     }
-
-    .login-bg {
-        background-image: url(../images/login-bg-d.png)
-    }    
 }
