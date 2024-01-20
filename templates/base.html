@@ -31,11 +31,15 @@
             </div>
         </nav>
         
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="">Login</a></li>
-            <li><a href="">Profile</a></li>
-            <li><a href="">Sign up</a></li>
-            <li><a href="">Mobile</a></li>
+        <ul class="sidenav purple accent-3" id="mobile-demo">
+            <li><a href="" class="countach-font">Market</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}" class="countach-font">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}" class="countach-font">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('sign_up') }}" class="countach-font">Sign up</a></li>
+                <li><a href="{{ url_for('login') }}" class="countach-font">Login</a></li>
+            {% endif %}
         </ul>
     </header>
 
