@@ -18,6 +18,23 @@
     font-family: 'countach', sans-serif;
 }
 
+@font-face {
+    font-family: 'countach-b';
+    src: url(../fonts/Countach-BoldItalic-TRIAL-BF63c5f2076e1b8.otf) format('opentype');
+}
+
+.countach-bold {
+    font-family: 'countach-b', sans-serif;
+}
+
+@font-face {
+    font-family: 'countach-l';
+    src: url(../fonts/Countach-LightItalic-TRIAL-BF63c5f208aed97.otf) format('opentype');
+}
+
+.countach-light {
+    font-family: 'countach-l', sans-serif;
+}
 .white-font {
     color: white;
 }
@@ -99,6 +116,12 @@
 
 .profile-update {
     border-radius: 50px;
+    font-size: 16px;
+}
+
+#create-item {
+    width: 8em;
+    font-size: 20px;
 }
 
 /* ----------------------------------------------------- Login */
