@@ -97,6 +97,10 @@
     font-size: 4rem;
 }
 
+.profile-update {
+    border-radius: 50px;
+}
+
 /* ----------------------------------------------------- Login */
 
 .login-bg {
