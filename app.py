@@ -114,6 +114,18 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/delete_user")
+def delete_user():
+    # finds and deletes user from db
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+    if session["user"]:
+        mongo.db.users.delete_one(user)
+
+    return redirect(url_for("main_page"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
