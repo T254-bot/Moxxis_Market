@@ -1,6 +1,6 @@
 /* ----------------------------------------------------- Misc */
 .text-shadow {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .flashes h4 {
@@ -76,25 +76,30 @@
 }
 
 .landing-signup-div {
-    padding-top: 2rem;
-    margin: 0, 0, 0, 1rem ;
+    margin: 0 0 0 1rem;
 }
 
 .landing-signup {
-    text-align: center;
+    padding-top: 10rem
 }
 
 .landing-login-div {
-    padding-top: 2rem;
-    margin: 0, 0, 0, 1rem ;
+    margin: 0 0 0 1rem;
 }
 
 .landing-login {
+    padding-top: 2rem;
     text-align: center;
 }
 
 .landing-message {
     margin-top: 10rem;
+}
+
+.main-btn {
+    width: 30%;
+    font-size: 20px;
+    border-radius: 50px;
 }
 
 /* ----------------------------------------------------- Sign up */
