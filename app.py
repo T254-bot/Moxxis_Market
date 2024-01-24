@@ -100,8 +100,12 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    # grab the session user's email from db
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, email=email)
 
     return redirect(url_for("login"))
 
@@ -121,6 +125,7 @@ def delete_user():
         {"username": session["user"]})
 
     if session["user"]:
+        session.pop("user")
         mongo.db.users.delete_one(user)
 
     return redirect(url_for("main_page"))
