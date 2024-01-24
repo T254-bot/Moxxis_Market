@@ -12,33 +12,35 @@
 <body>
 
     <header>
-        <nav>
-            <div class="nav-wrapper purple accent-2">
-                <a href="{{ url_for('main_page') }}" class="brand-logo center"><img src="../static/images/moxxis-market-logo1.png"></a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
-                <ul class="right hide-on-med-and-down">
-                {% if session.user %}
-                    <li><a href="{{ url_for('profile', username=session['user']) }}" class="countach-font nav-text">Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}" class="countach-font nav-text">Log Out</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('login') }}" class="countach-font nav-text">Log In</a></li>
-                    <li><a href="{{ url_for('sign_up') }}" class="countach-font nav-text">Sign up</a></li>
-                {% endif %}
-                </ul>
-                <ul class="hide-on-med-and-down">
-                    <li><a href="" class="countach-font nav-text">Market</a></li>
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper purple accent-2">
+                    <a href="{{ url_for('main_page') }}" class="brand-logo center"><img src="../static/images/moxxis-market-logo1.png"></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}" class="countach-font nav-text">Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}" class="countach-font nav-text">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}" class="countach-font nav-text">Log In</a></li>
+                        <li><a href="{{ url_for('sign_up') }}" class="countach-font nav-text">Sign up</a></li>
+                    {% endif %}
+                    </ul>
+                    <ul class="hide-on-med-and-down">
+                        <li><a href="" class="countach-font nav-text">Market</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         
-        <ul class="sidenav purple darken-2" id="mobile-demo">
-            <li><a href="" class="countach-font white-font m-nav">Market</a></li>
+        <ul class="sidenav purple darken-1" id="mobile-demo">
+            <li><a href="" class="countach-font m-nav-text m-nav">Market</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}" class="countach-font white-font m-nav">Profile</a></li>
-                <li><a href="{{ url_for('logout') }}" class="countach-font white-font m-nav">Logout</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}" class="countach-font m-nav-text m-nav">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}" class="countach-font m-nav-text m-nav">Logout</a></li>
             {% else %}
-                <li><a href="{{ url_for('sign_up') }}" class="countach-font white-font m-nav">Sign up</a></li>
-                <li><a href="{{ url_for('login') }}" class="countach-font white-font m-nav">Login</a></li>
+                <li><a href="{{ url_for('sign_up') }}" class="countach-font m-nav-text m-nav">Sign up</a></li>
+                <li><a href="{{ url_for('login') }}" class="countach-font m-nav-text m-nav">Login</a></li>
             {% endif %}
         </ul>
     </header>
