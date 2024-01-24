@@ -117,6 +117,16 @@
 
 .profile-un {
     font-size: 4rem;
+    margin: 2rem 0 0 0.5rem;
+}
+
+.profile-email {
+    font-size: 2rem;
+    margin: 1rem 0 5rem 0.5rem;
+}
+
+.profile-btn {
+    margin: 3rem 0 0 0;
 }
 
 .profile-update {
