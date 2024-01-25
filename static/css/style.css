@@ -178,16 +178,6 @@
         font-size: 90px;
         margin: 0 0 0 2.5rem;
     }
-    
-    .landing-signup-div {
-        display:inline;
-        width: 40%;
-    }
-    
-    .landing-login-div {
-        display:inline;
-        width: 40%;
-    }
 }
 
 @media (min-width: 992px) {
