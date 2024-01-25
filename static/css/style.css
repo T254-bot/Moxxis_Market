@@ -69,10 +69,15 @@
     color: white;
 }
 
+.landing-welcome {
+    height: 60px;
+    margin: 0 0 0 1rem;
+    font-size: 50px;
+}
 
 .landing-header-div {
     padding-top: 3rem;
-    width: 10rem;
+    width: 20rem;
 }
 
 .landing-header {
@@ -156,6 +161,32 @@
 @media (min-width: 576px) {
     .landing-bgimg {
         background-image: url(../images/main-landing-bg-t.jpg);
+    }
+
+    .landing-welcome {
+        height: 80px;
+        margin: 0 0 0 2rem;
+        font-size: 70px;
+    }
+    
+    .landing-header-div {
+        margin-left: 4rem;
+        width: 50rem;
+    }
+
+    .landing-header {
+        font-size: 90px;
+        margin: 0 0 0 2.5rem;
+    }
+    
+    .landing-signup-div {
+        display:inline;
+        width: 40%;
+    }
+    
+    .landing-login-div {
+        display:inline;
+        width: 40%;
     }
 }
 

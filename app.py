@@ -127,7 +127,7 @@ def edit_details():
         session.pop("user")
         session["user"] = request.form.get("username").lower()
         flash("Details updated successfully!")
-        return redirect(url_for("profile", user=current_user))
+        return redirect(url_for("profile", user=session["username"]))
 
     return render_template("edit_details.html")
 
