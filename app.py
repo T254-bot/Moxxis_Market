@@ -110,6 +110,29 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/profile/edit", methods=["GET", "POST"])
+def edit_details():
+    if request.method == "POST":
+
+        user = mongo.db.users.find_one(
+        {"username": session["user"]})
+
+        updated_details = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.update(user, updated_details)
+
+        # put the new user into 'session' cookie
+        session.pop("user")
+        session["user"] = request.form.get("username").lower()
+        flash("Details updated successfully!")
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("edit_details.html")
+
+
 @app.route("/logout")
 def logout():
     # logs user out of session cookie
