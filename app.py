@@ -114,20 +114,22 @@ def profile(username):
 def edit_details():
     if request.method == "POST":
 
-        current_user = mongo.db.users.find_one(
-        {"username": session["user"]})
-
-        mongo.db.users.update(current_user, {
+        new_details = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
-        })
+        }
+
+        username = request.form.get("username").lower()
+        email = request.form.get("email").lower()
+
+        mongo.db.users.update_one({"username": username}, {"$set": new_details}, upsert=True)
 
         # put the new user into 'session' cookie
         session.pop("user")
         session["user"] = request.form.get("username").lower()
         flash("Details updated successfully!")
-        return redirect(url_for("profile", user=session["username"]))
+        return render_template("profile.html", username=username, email=email)
 
     return render_template("edit_details.html")
 
