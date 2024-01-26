@@ -188,6 +188,17 @@
     .landing-signup {
         padding-top: 20rem;
     }
+
+    /* ----------------------------------------------------- Profile */
+
+.profile-un {
+    margin: 3rem 0 0 1rem;
+}
+
+.profile-email {
+    margin: 1rem 0 5rem 1rem;
+}
+
 }
 
 @media (min-width: 992px) {
