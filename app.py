@@ -114,16 +114,33 @@ def profile(username):
 def edit_details():
     if request.method == "POST":
 
+        new_item = mongo.db.users.find_one({"username": session["user"]})
+        print(new_item)
+
         new_details = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
 
+        email_match = mongo.db.users.find_one({"email": new_details["email"]})
+
+
+        if email_match and email_match["_id"] != new_item["_id"]:
+            flash("Email address is already in use")
+            return redirect(url_for("edit_details"))
+
+
+        username_match = mongo.db.users.find_one({"username": new_details["username"]})
+
+        if username_match and username_match["_id"] != new_item["_id"]:
+            flash("Username is already in use")
+            return redirect(url_for("edit_details"))
+
         username = request.form.get("username").lower()
         email = request.form.get("email").lower()
 
-        mongo.db.users.update_one({"username": username}, {"$set": new_details}, upsert=True)
+        mongo.db.users.update_one({"_id": ObjectId(new_item["_id"])}, {"$set": new_details}, upsert=True)
 
         # put the new user into 'session' cookie
         session.pop("user")
