@@ -148,7 +148,15 @@ def edit_details():
         flash("Details updated successfully!")
         return render_template("profile.html", username=username, email=email)
 
-    return render_template("edit_details.html")
+        # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    # grab the session user's email from db
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+
+    return render_template("edit_details.html", username=username, email=email)
 
 
 @app.route("/logout")
