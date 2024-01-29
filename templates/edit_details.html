@@ -2,38 +2,38 @@
 {% block content %}
 <div class="login-bg">
     <div class="row">
-        <h3 class="center-align sign-up-header countach-font blue darken-4 white-font text-shadow">Sign up!</h3>
+        <h1 class="center-align sign-up-header countach-font purple-text">Update your details</h1>
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_details') }}">
             <div class="card-panel grey darken-3">
                 <!-- username -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fa-solid fa-user-cog prefix light-blue-text text-darken-4"></i>
+                        <i class="fa-solid fa-user-cog prefix purple-text text-accent-2"></i>
                         <input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" value="" class="validate" required>
-                        <label class="white-font countach-font" for="username">Username</label>
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" value="" class="validate white-text" required>
+                        <label class="countach-font" for="username">Username</label>
                     </div>
                 </div>
                 <!-- email -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fa-solid fa-envelope-open-text prefix light-blue-text text-darken-4"></i>
-                        <input id="email" name="email" value="" type="text" class="validate" required>
-                        <label class="white-font countach-font" for="email">Email Address</label>
+                        <i class="fa-solid fa-envelope-open-text prefix purple-text text-accent-2"></i>
+                        <input id="email" name="email" value="" type="text" class="validate white-text" required>
+                        <label class="countach-font" for="email">Email Address</label>
                     </div>
                 </div>
                 <!-- password -->
                 <div class="row">
                     <div class="input-field col s12">
-                        <i class="fa-solid fa-lock prefix light-blue-text text-darken-4"></i>
+                        <i class="fa-solid fa-lock prefix purple-text text-accent-2"></i>
                         <input id="password" name="password" type="password" value=""  minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                        <label class="white-font countach-font" for="password">Password</label>
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate white-text" required>
+                        <label class="countach-font" for="password">Password</label>
                     </div>
                 </div>
                 <!-- update details -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                    <button type="submit" class="col s12 btn-large purple accent-3 countach-font text-shadow">
                         Update details <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
