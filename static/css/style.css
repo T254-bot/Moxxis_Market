@@ -114,7 +114,7 @@
 /* ----------------------------------------------------- Sign up */
 
 .sign-up-header {
-    margin: 2em 0 0 0;
+    margin: 2em 0 2rem 0;
     padding: 4px;
 }
 
@@ -152,6 +152,10 @@
 
 .login-bg {
     height: 50em;
+}
+
+.login-link {
+    font-size: 20px;
 }
 
 /* ----------------------------------------------------- Media Query's */
