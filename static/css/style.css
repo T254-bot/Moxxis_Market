@@ -35,9 +35,6 @@
 .countach-light {
     font-family: 'countach-l', sans-serif;
 }
-.white-font {
-    color: white;
-}
 
 /* ----------------------------------------------------- Nav-bar */
 
@@ -113,8 +110,11 @@
 
 /* ----------------------------------------------------- Market */
 
+.row .col.m3 {
+    margin: 2rem 0 1rem 6%;
+}
+
 .item-card {
-    margin: 2rem 0 1rem 1.5rem !important;
     padding: 0 0 4px 0 !important;
     border: solid 2px black
 }
@@ -229,16 +229,21 @@
         padding-top: 20rem;
     }
 
-    /* ----------------------------------------------------- Profile */
+/* ------------------------------ Profile */
 
-.profile-un {
-    margin: 3rem 0 0 1rem;
-}
+    .profile-un {
+        margin: 3rem 0 0 1rem;
+    }
 
-.profile-email {
-    margin: 1rem 0 2rem 1rem;
-}
+    .profile-email {
+        margin: 1rem 0 2rem 1rem;
+    }
 
+/* ------------------------------- Market */
+
+    .row .col.m3 {
+        margin: 2rem 0 1rem 6.3%;
+    }
 }
 
 @media (min-width: 992px) {
@@ -255,5 +260,11 @@
 
     .landing-signup {
         padding-top: 5rem;
+    }
+
+/* ------------------------------- Market */
+
+    .row .col.m3 {
+        margin: 2rem 0 1rem 6.8%;
     }
 }
