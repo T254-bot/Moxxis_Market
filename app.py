@@ -29,6 +29,10 @@ def get_items():
 def main_page():
     return render_template("main.html")
 
+@app.route("/market")
+def market_page():
+    return render_template("market.html")
+
 
 
 @app.route("/sign_up", methods=["GET", "POST"])

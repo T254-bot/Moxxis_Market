@@ -27,14 +27,14 @@
                     {% endif %}
                     </ul>
                     <ul class="hide-on-med-and-down">
-                        <li><a href="" class="countach-font nav-text">Market</a></li>
+                        <li><a href="{{ url_for('market_page') }}" class="countach-font nav-text">Market</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
         
         <ul class="sidenav purple darken-1" id="mobile-demo">
-            <li><a href="" class="countach-font m-nav-text m-nav">Market</a></li>
+            <li><a href="{{ url_for('market_page') }}" class="countach-font m-nav-text m-nav">Market</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}" class="countach-font m-nav-text m-nav">Profile</a></li>
                 <li><a href="{{ url_for('logout') }}" class="countach-font m-nav-text m-nav">Logout</a></li>
