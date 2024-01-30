@@ -17,21 +17,16 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 @app.route("/")
-@app.route("/get_items")
-def get_items():
-    items_for_sale = mongo.db.items_for_sale.find()
-    return render_template("main.html", items_for_sale=items_for_sale)
-
-
 @app.route("/main_page")
 def main_page():
     return render_template("main.html")
 
+
 @app.route("/market")
 def market_page():
-    return render_template("market.html")
+    items_for_sale = mongo.db.items_for_sale.find()
+    return render_template("market.html", items_for_sale=items_for_sale)
 
 
 

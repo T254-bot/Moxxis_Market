@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Hello</h1>
+<div class="row">
+    {% for item in items_for_sale %}
+        <div class="col s6 m4 l3 item-card card-panel grey darken-3">
+            <p class="item-card-title center-align purple accent-3 countach-font">{{ item.item_name }}</p>
+            <p class="col s6 item-value-l center-align countach-light">Score</p><p class="col s6 item-value-r center-align countach-light">{{ item.item_score }}</p>
+            <p class="col s6 item-value-l center-align countach-light">Damage</p><p class="col s6 item-value-r center-align countach-light">{{ item.damage }}</p>
+            <p class="col s6 item-value-l center-align countach-light">Elemental</p><p class="col s6 item-value-r center-align countach-light">{{ item.elemental }}</p>
+            <p class="col s6 item-value-l center-align countach-light">Reload Time</p><p class="col s6 item-value-r center-align countach-light">{{ item.reload_time }}</p>
+            <p class="col s6 item-value-l center-align countach-light">Magazine Size</p><p class="col s6 item-value-r center-align countach-light">{{ item.magazine_size }}</p>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
