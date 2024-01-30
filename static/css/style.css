@@ -114,23 +114,37 @@
 /* ----------------------------------------------------- Market */
 
 .item-card {
-    margin: 2rem 2rem 2rem 2rem !important;
+    margin: 2rem 0 1rem 1.5rem !important;
     padding: 0 0 4px 0 !important;
+    border: solid 2px black
 }
 
 .item-card-title {
     margin:0 0 0 0 !important;
     font-size: 1.5rem;
+    height: 63px;
 }
 
 .item-value-l {
-    margin: 4px 0 4px 0;
-
+    margin: 0;
+    padding: 4px 2.5px 4px 5px !important;
 }
 
 .item-value-r {
-    margin: 4px 0 4px 0;
+    margin: 0;
+    padding: 4px 5px 4px 2.5px !important;
+}
 
+.item-bb {
+    border-bottom: 1px solid black;
+}
+
+.item-bl {
+    border-left: 0.4px solid black;
+}
+
+.item-br {
+    border-right: 0.4px solid black;
 }
 
 /* ----------------------------------------------------- Sign up */
