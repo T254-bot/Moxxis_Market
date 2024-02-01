@@ -23,7 +23,7 @@ def main_page():
     return render_template("main.html")
 
 
-@app.route("/market")
+@app.route("/market_page")
 def market_page():
     items_for_sale = mongo.db.items_for_sale.find()
     return render_template("market.html", items_for_sale=items_for_sale)
@@ -141,7 +141,7 @@ def edit_details():
 
         mongo.db.users.update_one({"_id": ObjectId(new_item["_id"])}, {"$set": new_details}, upsert=True)
 
-        # put the new user into 'session' cookie
+        # put the user into new 'session' cookie
         session.pop("user")
         session["user"] = request.form.get("username").lower()
         flash("Details updated successfully!")
@@ -156,6 +156,34 @@ def edit_details():
         {"username": session["user"]})["email"]
 
     return render_template("edit_details.html", username=username, email=email)
+
+
+@app.route("/create_item", methods=["GET", "POST"])
+def create_item():
+    if request.method == "POST":
+
+        user_email = mongo.db.users.find_one(
+            {"username": session["user"]})["email"]
+
+        new_item = {
+            "item_name": request.form.get("item-name").lower(),
+            "item_score": request.form.get("item-score").lower(),
+            "damage": request.form.get("damage").lower(),
+            "accuracy": request.form.get("accuracy").lower(),
+            "handling": request.form.get("handling").lower(),
+            "reload_time": request.form.get("reload-time").lower(),
+            "fire_rate": request.form.get("fire-rate").lower(),
+            "magazine_size": request.form.get("magazine-size").lower(),
+            "elemental": request.form.get("elemental").lower(),
+            "for_trade": request.form.get("for-trade").lower(),
+            "created_by": user_email
+        }
+        mongo.db.items_for_sale.insert_one(new_item)
+
+        flash("Item added to Market Successfully!")
+        return redirect(url_for("market_page"))
+
+    return render_template("create_item.html")
 
 
 @app.route("/logout")
