@@ -184,6 +184,10 @@
     font-size: 20px;
 }
 
+.user-items {
+    border-top: solid #7b1fa2 5px;
+}
+
 /* ----------------------------------------------------- Login */
 
 .login-bg {

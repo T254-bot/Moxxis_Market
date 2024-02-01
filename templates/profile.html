@@ -25,6 +25,9 @@
     </div>
 
     <div class="row user-items">
+        <div class="col s12">
+            <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your current listed Items</h2>
+        </div>
         {% for item in items_for_sale %}
             {% if item.created_by == email %}
             <div class="col s5 m3 l2 item-card card-panel grey darken-3">
