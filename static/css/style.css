@@ -188,6 +188,18 @@
     border-top: solid #7b1fa2 5px;
 }
 
+/* ----------------------------------------------------- Create Item */
+
+.create-header {
+    margin: 2rem 0 1rem 0;
+    font-size: 40px;
+    padding: 4px;
+}
+
+.create-text {
+    font-size: 20px;
+}
+
 /* ----------------------------------------------------- Login */
 
 .login-bg {
