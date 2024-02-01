@@ -103,8 +103,11 @@ def profile(username):
     email = mongo.db.users.find_one(
         {"username": session["user"]})["email"]
 
+    # grab all items in db
+    items_for_sale = mongo.db.items_for_sale.find()
+
     if session["user"]:
-        return render_template("profile.html", username=username, email=email)
+        return render_template("profile.html", username=username, email=email, items_for_sale=items_for_sale)
 
     return redirect(url_for("login"))
 
