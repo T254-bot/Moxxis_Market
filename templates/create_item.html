@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="login-bg">
+        <div class="row">
+            <h1 class="center-align sign-up-header countach-font purple-text">Create Item</h1>
+            <form class="col s12 m8 offset-m2" method="POST" action="">
+                <div class="card-panel grey darken-3">
+                    <!-- item name -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="item-name" name="item-name" type="text" class="validate white-text" required>
+                            <label for="item-name" class="countach-font">Item Name:</label>
+                        </div>
+                    </div>
+                    <!-- item score -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="item-score" name="item-score" type="text" class="validate white-text" required>
+                            <label for="item-score" class="countach-font">Item Score:</label>
+                        </div>
+                    </div>
+                    <!-- damage -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="damage" name="damage" type="text" class="validate white-text" required>
+                            <label for="damage" class="countach-font">Damage:</label>
+                        </div>
+                    </div>
+                    <!-- accuracy -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="accuracy" name="accuracy" type="text" class="validate white-text" required>
+                            <label for="accuracy" class="countach-font">Accuracy:</label>
+                        </div>
+                    </div>
+                    <!-- handling -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="handling" name="handling" type="text" class="validate white-text" required>
+                            <label for="handling" class="countach-font">Handling:</label>
+                        </div>
+                    </div>
+                    <!-- reload time -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="reload-time" name="reload-time" type="text" class="validate white-text" required>
+                            <label for="reload-time" class="countach-font">Reload Time:</label>
+                        </div>
+                    </div>
+                    <!-- fire rate -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="fire-rate" name="fire-rate" type="text" class="validate white-text" required>
+                            <label for="fire-rate" class="countach-font">Fire Rate:</label>
+                        </div>
+                    </div>
+                    <!-- magazine size -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="magazine-size" name="magazine-size" type="text" class="validate white-text" required>
+                            <label for="magazine-size" class="countach-font">Magazine Size:</label>
+                        </div>
+                    </div>
+                    <!-- elemental -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="elemental" name="elemental" type="text" class="validate white-text" required>
+                            <label for="elemental" class="countach-font">Elemental:</label>
+                        </div>
+                    </div>
+                    <!-- for trade -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope prefix purple-text text-accent-2"></i>
+                            <input id="for-trade" name="for-trade" type="text" class="validate white-text" required>
+                            <label for="for-trade" class="countach-font">For Trade?:</label>
+                        </div>
+                    </div>
+                    <!-- create item -->
+                    <div class="row">
+                        <button type="submit" class="col s12 btn-large purple accent-3 countach-font">
+                            Create Item <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
