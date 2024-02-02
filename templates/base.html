@@ -15,8 +15,8 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper purple accent-2">
-                    <a href="{{ url_for('main_page') }}" class="brand-logo center"><img src="../static/images/moxxis-market-logo1.png"></a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+                    <a href="{{ url_for('main_page') }}" class="brand-logo center"><img src="../static/images/moxxis-market-logo1.png" aria-label="Home button" alt="Moxxi's bar sign"></a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger" aria-label="mobile nav toggle" ><i class="fa-solid fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}" class="countach-font nav-text">Profile</a></li>
