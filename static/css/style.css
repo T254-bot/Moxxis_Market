@@ -58,7 +58,7 @@
     background-image: url(../images/main-landing-bg-m.jpg);
     background-repeat: no-repeat;
     height: 950px;
-
+    margin-bottom: 0 !important;
 }
 
 .header-font {
@@ -98,9 +98,12 @@
     text-align: center;
 }
 
-.landing-message {
-    margin-top: 0rem;
+.landing-items-header {
+    font-size: 70px;
+    margin-bottom: 4rem;
 }
+
+
 
 .main-btn {
     width: 30%;
@@ -268,6 +271,7 @@
 
     .landing-bgimg {
         background-image: url(../images/main-landing-bg-d.jpg);
+        height: 550px;
     }
 
     .landing-login {

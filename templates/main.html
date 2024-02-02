@@ -16,6 +16,7 @@
     </div>
 
     <div class="row user-items">
+        <h3 class="col s12 countach-bold center-align purple-text text-accent-4 landing-items-header">Here's whats Fresh</h3>
         {% for item in last_six_items %}
             <div class="col s5 m3 l2 item-card card-panel grey darken-3">
                 <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
@@ -32,8 +33,6 @@
             </div>
         {% endfor %}
     </div>
-
-
 {% endblock %}
 
 
