@@ -20,7 +20,14 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/main_page")
 def main_page():
-    return render_template("main.html")
+
+    # Grab all items_for_sale from the database
+    items_cursor = mongo.db.items_for_sale.find()
+
+    # Convert cursor to a list and reverse it to get the last 6 items
+    last_six_items = list(items_cursor)[-6:]
+
+    return render_template("main.html", last_six_items=last_six_items)
 
 
 @app.route("/market_page")
