@@ -15,5 +15,27 @@
         </div>
     </div>
 
+    <div class="row user-items">
+        {% for item in items_for_sale|reverse %}
+            {% if loop.index <= 6 %}
+                <div class="col s5 m3 l2 item-card card-panel grey darken-3">
+                    <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
+                    <p class="col s6 item-value-l item-br center-align countach-light white-text">Magazine Size</p>
+                    <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
 
 {% endblock %}
+
+
