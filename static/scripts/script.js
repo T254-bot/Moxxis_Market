@@ -10,7 +10,7 @@ window.onload = function() {
             message.style.opacity = '0';
             setTimeout(function() {
                 message.parentNode.removeChild(message);
-            }, 100); // Fade-out animation duration in milliseconds
+            }, 50); // Fade-out animation duration in milliseconds
         }, 10000); // Flash message display duration in milliseconds
     });
 };
