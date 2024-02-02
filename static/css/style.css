@@ -156,7 +156,7 @@
 /* ----------------------------------------------------- Sign up */
 
 .sign-up-header {
-    margin: 2em 0 2rem 0;
+    margin: 2rem 0 2rem 0;
     padding: 4px;
 }
 
@@ -216,6 +216,10 @@
     font-size: 20px;
 }
 
+.login-header {
+    margin: 0 0 2rem 0;
+    padding: 4px;
+}
 /* ----------------------------------------------------- Media Query's */
 
 

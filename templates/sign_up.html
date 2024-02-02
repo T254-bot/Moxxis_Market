@@ -2,7 +2,7 @@
 {% block content %}
     <div class="login-bg">
         <div class="row">
-            <h1 class="center-align sign-up-header countach-font purple-text">Sign up!</h1>
+            <h1 class="center-align sign-up-header countach-bold purple-text">Sign up!</h1>
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('sign_up') }}">
                 <div class="card-panel grey darken-3">
                     <!-- username -->
@@ -43,7 +43,7 @@
 
         <div class="row">
             <div class="col s12">
-                <p class="center-align purple-text countach-font login-link">
+                <p class="center-align purple-text countach-light login-link">
                     Already have an account?
                     <a href="{{ url_for('login') }}" class="">Sign in here!</a>
                 </p>
