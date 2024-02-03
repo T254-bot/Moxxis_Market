@@ -122,49 +122,48 @@ def profile(username):
 @app.route("/profile/edit", methods=["GET", "POST"])
 def edit_details():
     if request.method == "POST":
-
         current_user = mongo.db.users.find_one({"username": session["user"]})
 
-        new_details = {
-            "username": request.form.get("username").lower(),
-            "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
+        new_username = request.form.get("username").lower()
+        new_email = request.form.get("email").lower()
+        new_password = generate_password_hash(request.form.get("password"))
 
-        email_match = mongo.db.users.find_one({"email": new_details["email"]})
-
-
+        # Check if the new email is already in use by another user
+        email_match = mongo.db.users.find_one({"email": new_email})
         if email_match and email_match["_id"] != current_user["_id"]:
             flash("Email address is already in use")
             return redirect(url_for("edit_details"))
 
-
-        username_match = mongo.db.users.find_one({"username": new_details["username"]})
-
+        # Check if the new username is already in use by another user
+        username_match = mongo.db.users.find_one({"username": new_username})
         if username_match and username_match["_id"] != current_user["_id"]:
             flash("Username is already in use")
             return redirect(url_for("edit_details"))
 
-        username = request.form.get("username").lower()
-        email = request.form.get("email").lower()
+        # Update the user's details in the users collection
+        mongo.db.users.update_one(
+            {"_id": current_user["_id"]},
+            {"$set": {"username": new_username, "email": new_email, "password": new_password}}
+        )
 
-        mongo.db.users.update_one({"_id": ObjectId(current_user["_id"])}, {"$set": new_details}, upsert=True)
+        # Update the created_by field in the items_for_sale collection
+        mongo.db.items_for_sale.update_many(
+            {"created_by": current_user["email"]},
+            {"$set": {"created_by": new_email}}
+        )
 
-        # put the user into new 'session' cookie
-        session.pop("user")
-        session["user"] = request.form.get("username").lower()
+        # Update the session user's username
+        session["user"] = new_username
+
         flash("Details updated successfully!")
-        return render_template("profile.html", username=username, email=email)
+        return redirect(url_for("profile", username=new_username))
 
-        # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-        # grab the session user's email from db
-    email = mongo.db.users.find_one(
-        {"username": session["user"]})["email"]
+    # Get the session user's username and email
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    email = mongo.db.users.find_one({"username": session["user"]})["email"]
 
     return render_template("edit_details.html", username=username, email=email)
+
 
 
 @app.route("/create_item", methods=["GET", "POST"])
