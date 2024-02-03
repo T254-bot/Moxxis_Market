@@ -153,6 +153,12 @@
     border-right: 0.4px solid black;
 }
 
+.market-text {
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 /* ----------------------------------------------------- Sign up */
 
 .sign-up-header {

@@ -2,6 +2,16 @@
 {% block content %}
 
 <div class="row">
+    <div class="col s12">
+        <h1 class="market-header countach-bold center-align purple-text">Step right Up!</h1>
+        <p class="market-text countach-light center-align purple-text">You must be signed in to begin purchasing/trading an item. Upon clicking the "interested" button
+            on the full item card, an email will be sent to you and the person that has listed the item. From there you can discuss payment/trade between you,
+            just remember to remove your item once it has been finalised which you can do by clicking the "remove" button found on the full item card of YOUR items.
+        </p>
+    </div>
+</div>
+
+<div class="row">
     {% for item in items_for_sale %}
         <div class="col s5 m3 l2 item-card card-panel grey darken-3">
             <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
