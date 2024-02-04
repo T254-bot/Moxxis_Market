@@ -152,6 +152,10 @@
 .item-br {
     border-right: 0.4px solid black;
 }
+.m-item-btn {
+    border-top: 0.4px solid black;
+    padding-bottom: 3px;
+}
 
 .market-text {
     font-size: 20px;
