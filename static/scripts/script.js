@@ -14,3 +14,8 @@ window.onload = function() {
         }, 10000); // Flash message display duration in milliseconds
     });
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    var modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
+});
