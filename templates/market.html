@@ -27,24 +27,23 @@
             <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
             <!-- Modal button -->
             <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
+
+            <!-- Modal Structure -->
+            <div id="modal{{ item._id }}" class="modal">
+                <div class="modal-content">
+                    <h4>{{ item.item_name }}</h4>
+                    <p>Score: {{ item.item_score }}</p>
+                    <p>Damage: {{ item.damage }}</p>
+                    <p>Elemental: {{ item.elemental }}</p>
+                    <p>Accuracy: {{ item.accuracy }}</p>
+                    <p>Magazine Size: {{ item.magazine_size }}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+            </div>
         </div>
     {% endfor %}
-
-    <!-- Modal Structure -->
-    <div id="modal{{ item._id }}" class="modal">
-        <div class="modal-content">
-            <h4>{{ item.item_name }}</h4>
-            <p>Score: {{ item.item_score }}</p>
-            <p>Damage: {{ item.damage }}</p>
-            <p>Elemental: {{ item.elemental }}</p>
-            <p>Accuracy: {{ item.accuracy }}</p>
-            <p>Magazine Size: {{ item.magazine_size }}</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
-    </div>
-    
 </div>
 
 {% endblock %}
