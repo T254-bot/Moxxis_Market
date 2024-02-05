@@ -7,6 +7,10 @@
     line-height: 2;
 }
 
+.n-pad {
+    padding: 0 !important;
+}
+
 /* ----------------------------------------------------- Fonts */
 
 @font-face {
@@ -155,6 +159,17 @@
 .m-item-btn {
     border-top: 0.4px solid black;
     padding-bottom: 3px;
+}
+
+.item-card-modal {
+    border: 1px solid black;
+}
+
+.modal-btn {
+    border-top: 0.4px solid black;
+    border-right: 0.4px solid black;
+    padding-bottom: 3px;
+    font-size: 20px;
 }
 
 .market-text {

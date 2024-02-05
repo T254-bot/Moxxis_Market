@@ -29,8 +29,8 @@
             <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
 
             <!-- Modal Structure -->
-            <div id="modal{{ item._id }}" class="modal grey darken-3">
-                <div class="modal-content">
+            <div id="modal{{ item._id }}" class="modal item-card-modal grey darken-3">
+                <div class="modal-content n-pad">
                     <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
                     <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
                     <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
@@ -40,9 +40,18 @@
                     <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
                     <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
                     <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Handling</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.handling }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Reload Time</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.reload_time }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Fire Rate</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.fire_rate }}</p>
                     <p class="col s6 item-value-l item-br center-align countach-light white-text">Magazine Size</p>
                     <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Trade</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
+                    <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
+                    <a href="" class="col s4 modal-btn-r green black-text countach-font center-align">I'm Interested!</a>
                 </div>
             </div>
         </div>
