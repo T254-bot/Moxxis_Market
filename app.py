@@ -33,7 +33,12 @@ def main_page():
 @app.route("/market_page")
 def market_page():
     items_for_sale = mongo.db.items_for_sale.find()
-    return render_template("market.html", items_for_sale=items_for_sale)
+
+    if session["user"]:
+        current_user_email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+
+    return render_template("market.html", items_for_sale=items_for_sale,current_user_email=current_user_email)
 
 
 

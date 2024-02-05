@@ -162,14 +162,21 @@
 }
 
 .item-card-modal {
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
 .modal-btn {
     border-top: 0.4px solid black;
     border-right: 0.4px solid black;
     padding-bottom: 3px;
-    font-size: 20px;
+    font-size: 105%;
+}
+
+.modal-btn-r {
+    border-top: 0.4px solid black;
+    border-left: 0.4px solid black;
+    padding-bottom: 3px;
+    font-size: 105%;
 }
 
 .market-text {

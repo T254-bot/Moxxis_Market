@@ -46,12 +46,16 @@
                     <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.reload_time }}</p>
                     <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Fire Rate</p>
                     <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.fire_rate }}</p>
-                    <p class="col s6 item-value-l item-br center-align countach-light white-text">Magazine Size</p>
-                    <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
-                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Trade</p>
-                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
+                    <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Magazine Size</p>
+                    <p class="col s6 item-value-r item-bl item-bb center-align white-text countach-light">{{ item.magazine_size }}</p>
+                    <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Trade</p>
+                    <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
                     <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
-                    <a href="" class="col s4 modal-btn-r green black-text countach-font center-align">I'm Interested!</a>
+                    {% if current_user_email is defined and current_user_email == item.created_by %}
+                        <a href="" class="col s4 offset-s4 modal-btn-r green black-text countach-font center-align">I'm Interested!</a>
+                    {% else %}
+                        <a href="" class="col s4 offset-s4 modal-btn-r red black-text countach-font center-align">I'm Interested!</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
