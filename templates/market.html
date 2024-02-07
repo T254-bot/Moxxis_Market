@@ -52,9 +52,9 @@
                     <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
                     <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
                     {% if current_user_email is defined and current_user_email == item.created_by %}
-                        <a href="" class="col s4 offset-s4 modal-btn-r green black-text countach-font center-align">I'm Interested!</a>
+                        <a href="" class="col s4 offset-s4 modal-btn-r red black-text countach-font center-align">Remove</a>
                     {% else %}
-                        <a href="" class="col s4 offset-s4 modal-btn-r red black-text countach-font center-align">I'm Interested!</a>
+                        <a href="" class="col s4 offset-s4 modal-btn-r green black-text countach-font center-align">I'm Interested!</a>
                     {% endif %}
                 </div>
             </div>

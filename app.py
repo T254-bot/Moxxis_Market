@@ -45,6 +45,15 @@ def market_page():
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
+
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+        
+        # checks if passwords match
+        if password != confirm_password:
+            flash("Passwords do NOT match!")
+            return redirect(url_for("sign_up"))
+
         # checks if the username is already in use
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -132,6 +141,14 @@ def edit_details():
         new_username = request.form.get("username").lower()
         new_email = request.form.get("email").lower()
         new_password = generate_password_hash(request.form.get("password"))
+        
+        password = request.form.get("password")
+        confirm_password = request.form.get("confirm-password")
+        
+        # checks if passwords match
+        if password != confirm_password:
+            flash("Passwords do NOT match!")
+            return redirect(url_for("edit_details"))
 
         # Check if the new email is already in use by another user
         email_match = mongo.db.users.find_one({"email": new_email})
