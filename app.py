@@ -122,8 +122,8 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -243,6 +243,31 @@ def delete_user():
         mongo.db.users.delete_one(user)
 
     return redirect(url_for("main_page"))
+
+@app.route("/delete_item", methods=["GET", "POST"])
+def delete_item():
+
+    item_id = request.form.get("item-id")
+
+    # Checks if the item is in the 'items_for_sale' database
+    item = mongo.db.items_for_sale.find_one({'_id': ObjectId(item_id)})
+    if item:
+        # If the item IS in the 'items_for_sale' db
+        mongo.db.items_for_sale.delete_one({'_id': ObjectId(item_id)})
+        flash("Item deleted successfully")
+        return redirect(url_for("profile"))
+
+    # Checks if the item is in the 'pending_items' db
+    item = mongo.db.pending_items.find_one({'_id': ObjectId(item_id)})
+    if item:
+        # If the item IS in the 'pending_items' db
+        mongo.db.pending_items.delete_one({'_id': ObjectId(item_id)})
+        flash("Item deleted successfully")
+        return redirect(url_for("profile"))
+
+    # If the item is not found in either db
+    flash("Error: Item could not be found")
+    return redirect(url_for("profile"))
 
 
 if __name__ == "__main__":

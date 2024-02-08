@@ -52,9 +52,15 @@
                     <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
                     <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
                     {% if current_user_email is defined and current_user_email == item.created_by %}
-                        <a href="" class="col s4 offset-s4 modal-btn-r red black-text countach-font center-align">Remove</a>
+                    <form class="col s4 offset-s4 n-pad" method="POST" action="{{ url_for('delete_item') }}">
+                        <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                        <button type="submit" class="modal-dlt red black-text countach-font center-align">Remove</button>
+                    </form>
                     {% else %}
-                        <a href="" class="col s4 offset-s4 modal-btn-r green black-text countach-font center-align">I'm Interested!</a>
+                    <form class="col s4 offset-s4" method="POST" action="{{ url_for('delete_item') }}">
+                        <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                        <button type="submit" class="modal-btn-r red black-text countach-font center-align">Remove</button>
+                    </form>
                     {% endif %}
                 </div>
             </div>

@@ -11,6 +11,10 @@
     padding: 0 !important;
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* ----------------------------------------------------- Fonts */
 
 @font-face {
@@ -172,10 +176,18 @@
     font-size: 105%;
 }
 
+button {
+    width: 100%;
+}
+
 .modal-btn-r {
     border-top: 0.4px solid black;
     border-left: 0.4px solid black;
     padding-bottom: 3px;
+    font-size: 105%;
+}
+
+.modal-dlt {
     font-size: 105%;
 }
 
