@@ -20,6 +20,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/main_page")
 def main_page():
+    # Checks if user is logged in and if so grabs users email
+    if "user" in session:
+        current_user_email = mongo.db.users.find_one(
+            {"username": session["user"]})["email"]
+    else:
+        current_user_email = None
 
     # Grab all items_for_sale from the database
     items_cursor = mongo.db.items_for_sale.find()
@@ -27,16 +33,18 @@ def main_page():
     # Convert cursor to a list and reverse it to get the last 6 items
     last_six_items = list(items_cursor)[-6:]
 
-    return render_template("main.html", last_six_items=last_six_items)
+    return render_template("main.html", last_six_items=last_six_items, current_user_email=current_user_email)
 
 
 @app.route("/market_page")
 def market_page():
     items_for_sale = mongo.db.items_for_sale.find()
 
-    if session["user"]:
+    if "user" in session:
         current_user_email = mongo.db.users.find_one(
-        {"username": session["user"]})["email"]
+            {"username": session["user"]})["email"]
+    else:
+        current_user_email = None
 
     return render_template("market.html", items_for_sale=items_for_sale,current_user_email=current_user_email)
 
