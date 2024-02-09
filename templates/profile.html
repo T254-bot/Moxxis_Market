@@ -33,49 +33,56 @@
             </div>
             {% for item in pending_items %}
                 {% if item.created_by == email %}
-                    <div class="col s5 m3 l2 item-card card-panel grey darken-3">
-                        <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
-                        <p class="col s6 item-value-l item-br center-align countach-light white-text">Magazine Size</p>
-                        <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
-                        <!-- Modal button -->
-                        <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
-            
-                        <!-- Modal Structure -->
-                        <div id="modal{{ item._id }}" class="modal item-card-modal grey darken-3">
-                            <div class="modal-content n-pad">
-                                <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Handling</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.handling }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Reload Time</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.reload_time }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Fire Rate</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.fire_rate }}</p>
-                                <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Magazine Size</p>
-                                <p class="col s6 item-value-r item-bl item-bb center-align white-text countach-light">{{ item.magazine_size }}</p>
-                                <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Trade</p>
-                                <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
-                                <!-- Buttons -->
-                                <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
-                                <a href="" class="col s4 offset-s4 modal-btn-r red black-text countach-font center-align">Remove</a>
-                            </div>
+                <div class="col s5 m3 l2 item-card card-panel grey darken-3">
+                    <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
+                    <p class="col s6 item-value-l item-br center-align countach-light white-text">Magazine Size</p>
+                    <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
+                    <!-- Modal button -->
+                    <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
+        
+                    <!-- Item card Modal Structure -->
+                    <div id="modal{{ item._id }}" class="modal item-card-modal grey darken-3">
+                        <div class="modal-content n-pad">
+                            <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Handling</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.handling }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Reload Time</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.reload_time }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Fire Rate</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.fire_rate }}</p>
+                            <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Magazine Size</p>
+                            <p class="col s6 item-value-r item-bl item-bb center-align white-text countach-light">{{ item.magazine_size }}</p>
+                            <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Trade</p>
+                            <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
+                            <!-- Buttons -->
+                            <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
+                            <form class="col s4 n-pad" method="POST" action="{{ url_for('move_to_market') }}">
+                                <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                                <button type="submit" class="modal-btn-r blue black-text countach-font center-align">Re List</button>
+                            </form>
+                            <form class="col s4 n-pad" method="POST" action="{{ url_for('delete_item') }}">
+                                <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                                <button type="submit" class="modal-btn-r red black-text countach-font center-align">Remove</button>
+                            </form>
                         </div>
                     </div>
+                </div>
                 {% endif %}
             {% endfor %}
         </div>
@@ -96,53 +103,59 @@
             </div>
             {% for item in items_for_sale %}
                 {% if item.created_by == email %}
-                    <div class="col s5 m3 l2 item-card card-panel grey darken-3">
-                        <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
-                        <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
-                        <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
-                        <p class="col s6 item-value-l item-br center-align countach-light white-text">Magazine Size</p>
-                        <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
-                        <!-- Modal button -->
-                        <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
-            
-                        <!-- Modal Structure -->
-                        <div id="modal{{ item._id }}" class="modal item-card-modal grey darken-3">
-                            <div class="modal-content n-pad">
-                                <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Handling</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.handling }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Reload Time</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.reload_time }}</p>
-                                <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Fire Rate</p>
-                                <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.fire_rate }}</p>
-                                <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Magazine Size</p>
-                                <p class="col s6 item-value-r item-bl item-bb center-align white-text countach-light">{{ item.magazine_size }}</p>
-                                <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Trade</p>
-                                <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
-                                <!-- buttons -->
-                                <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
-                                {% if email is defined and email == item.created_by %}
-                                    <a href="" class="col s4 offset-s4 modal-btn-r red black-text countach-font center-align">Remove</a>
-                                {% else %}
-                                    <a href="" class="col s4 offset-s4 modal-btn-r green black-text countach-font center-align">I'm Interested!</a>
-                                {% endif %}
-                            </div>
+                <div class="col s5 m3 l2 item-card card-panel grey darken-3">
+                    <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
+                    <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
+                    <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
+                    <p class="col s6 item-value-l item-br center-align countach-light white-text">Magazine Size</p>
+                    <p class="col s6 item-value-r item-bl center-align white-text countach-light">{{ item.magazine_size }}</p>
+                    <!-- Modal button -->
+                    <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
+        
+                    <!-- Item card Modal Structure -->
+                    <div id="modal{{ item._id }}" class="modal item-card-modal grey darken-3">
+                        <div class="modal-content n-pad">
+                            <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Score</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.item_score }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Damage</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.damage }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Elemental</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.elemental }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Accuracy</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align white-text countach-light">{{ item.accuracy }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Handling</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.handling }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Reload Time</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.reload_time }}</p>
+                            <p class="col s6 item-value-l item-bb item-br center-align countach-light white-text">Fire Rate</p>
+                            <p class="col s6 item-value-r item-bb item-bl center-align countach-light white-text text-accent-2">{{ item.fire_rate }}</p>
+                            <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Magazine Size</p>
+                            <p class="col s6 item-value-r item-bl item-bb center-align white-text countach-light">{{ item.magazine_size }}</p>
+                            <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Trade</p>
+                            <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
+                            <!-- Buttons -->
+                            <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
+                            {% if current_user_email is defined and current_user_email == item.created_by %}
+                            <form class="col s4 offset-s4 n-pad" method="POST" action="{{ url_for('delete_item') }}">
+                                <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                                <button type="submit" class="modal-btn-r red black-text countach-font center-align">Remove</button>
+                            </form>
+                            {% else %}
+                            <form class="col s4 offset-s4 modal-frm" method="POST" action="{{ url_for('move_to_pending') }}">
+                                <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                                <button type="submit" class="modal-btn-r green black-text countach-font center-align">Interested</button>
+                            </form>
+                            {% endif %}
                         </div>
                     </div>
+                </div>
                 {% endif %}
             {% endfor %}
         </div>
