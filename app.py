@@ -169,7 +169,7 @@ def profile():
 
     # Query the MongoDB collection to find items with the same created_by value that matches current users email
     ifs_list = list(mongo.db.items_for_sale.find({"created_by": email}))
-    pi_list = matching_items = list(mongo.db.items_for_sale.find({"created_by": email}))
+    pi_list = matching_items = list(mongo.db.pending_items.find({"created_by": email}))
 
     # grab all items in both dbs
     items_for_sale = list(mongo.db.items_for_sale.find())

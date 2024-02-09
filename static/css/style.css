@@ -233,6 +233,11 @@ button {
     font-size: 16px;
 }
 
+.profile-n {
+    font-size: 200%;
+    padding: 15% 0 10% 0;
+}
+
 #create-item {
     width: 8em;
     font-size: 20px;

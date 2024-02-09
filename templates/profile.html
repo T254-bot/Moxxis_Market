@@ -29,7 +29,7 @@
     {% if pi_list|length > 0 %}
         <div class="row user-items">
             <div class="col s12">
-                <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your Items that require Attention</h2>
+                <h2 class="profile-items-header countach-bold purple-text text-darken-1 center-align">Your Items that require Attention</h2>
             </div>
             {% for item in pi_list %}
                 <div class="col s5 m3 l2 item-card card-panel grey darken-3">
@@ -87,9 +87,9 @@
     {% else %}
         <div class="row user-items">
             <div class="col s12">
-                <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your Items that require Attention</h2>
+                <h2 class="profile-items-header countach-bold purple-text text-darken-1 center-align">Your Items that require Attention</h2>
             </div>
-            <p class="center-align countach-font profile-n">Nothing to show here!</p>
+            <p class="center-align countach-font grey-text profile-n">Nothing to show here!</p>
         </div>
     {% endif %}
 
@@ -97,7 +97,7 @@
     {% if ifs_list|length > 0 %}
         <div class="row user-items">
             <div class="col s12">
-                <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your current listed Items</h2>
+                <h2 class="profile-items-header countach-bold purple-text text-darken-1 center-align">Your current listed Items</h2>
             </div>
             {% for item in ifs_list %}
                 <div class="col s5 m3 l2 item-card card-panel grey darken-3">
@@ -151,9 +151,9 @@
     {% else %}
         <div class="row user-items no">
             <div class="col s12">
-                <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your current listed Items</h2>
+                <h2 class="profile-items-header countach-bold purple-text text-darken-1 center-align">Your current listed Items</h2>
             </div>
-            <p class="center-align countach-font profile-n">Nothing to show here!</p>
+            <p class="center-align countach-font grey-text text-darken-1 profile-n">Nothing to show here!</p>
         </div>
     {% endif %}
 {% endblock %}
