@@ -11,8 +11,16 @@
     padding: 0 !important;
 }
 
+.n-marg {
+    margin: 0 !important;
+}
+
 .hidden {
     display: none !important;
+}
+
+.row {
+    margin: 0 !important;
 }
 
 /* ----------------------------------------------------- Fonts */
@@ -220,12 +228,12 @@ button {
 }
 
 .profile-email {
-    font-size: 2rem;
+    font-size: 150%;
     margin: 1rem 0 5rem 0.5rem;
 }
 
 .profile-btn {
-    margin: 3rem 0 0 0;
+    margin: 3rem 0 2rem 0;
 }
 
 .profile-update {

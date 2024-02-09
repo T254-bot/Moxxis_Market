@@ -1,54 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="login-bg">
-    <!-- Page header -->
-    <div class="row">
-        <h1 class="center-align sign-up-header countach-font purple-text">Update your details</h1>
-        <!-- Edit details form -->
-        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_details') }}">
-            <div class="card-panel grey darken-3">
-                <!-- username input -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fa-solid fa-user-cog prefix purple-text text-accent-2"></i>
-                        <input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" value="{{ username }}" class="validate white-text" required>
-                        <label class="countach-font" for="username">Username</label>
+    <div class="login-bg">
+        <!-- Page header -->
+        <div class="row">
+            <h1 class="center-align sign-up-header countach-font purple-text">Update your details</h1>
+            <!-- Edit details form -->
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_details') }}">
+                <div class="card-panel grey darken-3">
+                    <!-- username input -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-user-cog prefix purple-text text-accent-2"></i>
+                            <input id="username" name="username" type="text" minlength="5"
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" value="{{ username }}" class="validate white-text" required>
+                            <label class="countach-font" for="username">Username</label>
+                        </div>
+                    </div>
+                    <!-- email input -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-envelope-open-text prefix purple-text text-accent-2"></i>
+                            <input id="email" name="email" value="{{ email }}" type="text" class="validate white-text" required>
+                            <label class="countach-font" for="email">Email Address</label>
+                        </div>
+                    </div>
+                    <!-- password input -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-lock prefix purple-text text-accent-2"></i>
+                            <input id="password" name="password" type="password" value=""  minlength="5"
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate white-text" required>
+                            <label class="countach-font" for="password">Password</label>
+                        </div>
+                    </div>
+                    <!-- confirm password input -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fa-solid fa-lock-open prefix purple-text text-accent-2"></i>
+                            <input id="confirm-password" name="confirm-password" type="password" minlength="5"
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate white-text" required>
+                            <label for="confirm-password" class="countach-font">Confirm Password</label>
+                        </div>
+                    </div>
+                    <!-- form submit (Update details) button -->
+                    <div class="row">
+                        <button type="submit" class="col s12 btn-large purple accent-3 countach-font">
+                            Update details <i class="fas fa-sign-in-alt"></i>
+                        </button>
                     </div>
                 </div>
-                <!-- email input -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fa-solid fa-envelope-open-text prefix purple-text text-accent-2"></i>
-                        <input id="email" name="email" value="{{ email }}" type="text" class="validate white-text" required>
-                        <label class="countach-font" for="email">Email Address</label>
-                    </div>
-                </div>
-                <!-- password input -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fa-solid fa-lock prefix purple-text text-accent-2"></i>
-                        <input id="password" name="password" type="password" value=""  minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate white-text" required>
-                        <label class="countach-font" for="password">Password</label>
-                    </div>
-                </div>
-                <!-- confirm password input -->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="fa-solid fa-lock-open prefix purple-text text-accent-2"></i>
-                        <input id="confirm-password" name="confirm-password" type="password" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate white-text" required>
-                        <label for="confirm-password" class="countach-font">Confirm Password</label>
-                    </div>
-                </div>
-                <!-- form submit (Update details) button -->
-                <div class="row">
-                    <button type="submit" class="col s12 btn-large purple accent-3 countach-font">
-                        Update details <i class="fas fa-sign-in-alt"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 {% endblock %}
