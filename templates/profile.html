@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    {% if item in items_for_sale %}
+    {% if items_for_sale %}
         <div class="row user-items">
             <div class="col s12">
                 <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your current listed Items</h2>
@@ -81,15 +81,18 @@
             {% endfor %}
         </div>
     {% else %}
-
-        <p>Nothing here right now!</p>
-
-    {% endif %}
-
-    {% if item in pending_items %}
         <div class="row user-items">
             <div class="col s12">
                 <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your current listed Items</h2>
+            </div>
+            <p class="center-align countach-font">Nothing to show here!</p>
+        </div>
+    {% endif %}
+
+    {% if pending_items %}
+        <div class="row user-items">
+            <div class="col s12">
+                <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your Items that require Attention</h2>
             </div>
             {% for item in pending_items %}
                 {% if item.created_by == email %}
@@ -139,9 +142,12 @@
             {% endfor %}
         </div>
     {% else %}
-
-        <p>Nothing to show here!</p>
-
+    <div class="row user-items">
+        <div class="col s12">
+            <h2 class="profile-items-header countach-font purple-text text-darken-1 center-align">Your Items that require Attention</h2>
+        </div>
+        <p class="center-align countach-font">Nothing to show here!</p>
+    </div>
     {% endif %}
 
 
