@@ -183,12 +183,16 @@ button {
 .modal-btn-r {
     border-top: 0.4px solid black;
     border-left: 0.4px solid black;
-    padding-bottom: 3px;
+    padding: 0 0 3px 0;
     font-size: 105%;
 }
 
 .modal-dlt {
     font-size: 105%;
+}
+
+.modal-frm {
+    padding: 0 !important;
 }
 
 .market-text {

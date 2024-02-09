@@ -270,6 +270,27 @@ def delete_item():
     return redirect(url_for("profile"))
 
 
+@app.route("/move_to_pending", methods=["GET", "POST"])
+def move_to_pending():
+    # Retrieves the item id from html page and finds item within 'items_for_sale' db
+    item_id = request.form.get("item-id")
+    item = mongo.db.items_for_sale.find_one({'_id': ObjectId(item_id)})
+
+    if item:
+        # Insert the item into the pending_items collection
+        mongo.db.pending_items.insert_one(item)
+        
+        # Remove the item from the items_for_sale collection
+        mongo.db.items_for_sale.delete_one({'_id': ObjectId(item_id)})
+        flash("You have alerted the seller you are Interested in this item!")
+        return render_template("market.html")
+
+    else:
+        # Provides the user with error message
+        flash("Item could not be found. Please try again later")
+        return render_template("market.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
