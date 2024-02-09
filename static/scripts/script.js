@@ -1,3 +1,4 @@
+// mobile sidenav initialization 
 $(document).ready(function(){
     $('.sidenav').sidenav();
 });
@@ -15,6 +16,7 @@ window.onload = function() {
     });
 };
 
+// Modal initialization
 document.addEventListener('DOMContentLoaded', function() {
     var modals = document.querySelectorAll('.modal');
     M.Modal.init(modals);

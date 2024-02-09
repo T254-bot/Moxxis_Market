@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="login-bg">
+        <!-- Page header -->
         <div class="row">
             <h1 class="center-align create-header countach-font purple-text">Enter your weapons information below!</h1>
             <p class="center-align create-text countach-light purple-text text-darken-2">Please make sure all fields are filled out and the provided
                 information is as seen on the in-game item and accurate, as you will not be able to edit once the item is listed.</p>
+            <!-- Create Item Form -->
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('create_item') }}">
                 <div class="card-panel grey darken-3">
-                    <!-- item name -->
+                    <!-- item name input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -15,7 +17,7 @@
                             <label for="item-name" class="countach-font">Item Name:</label>
                         </div>
                     </div>
-                    <!-- item score -->
+                    <!-- item score input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -23,7 +25,7 @@
                             <label for="item-score" class="countach-font">Item Score:</label>
                         </div>
                     </div>
-                    <!-- damage -->
+                    <!-- damage input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -31,7 +33,7 @@
                             <label for="damage" class="countach-font">Damage:</label>
                         </div>
                     </div>
-                    <!-- accuracy -->
+                    <!-- accuracy input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -39,7 +41,7 @@
                             <label for="accuracy" class="countach-font">Accuracy:</label>
                         </div>
                     </div>
-                    <!-- handling -->
+                    <!-- handling input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -47,7 +49,7 @@
                             <label for="handling" class="countach-font">Handling:</label>
                         </div>
                     </div>
-                    <!-- reload time -->
+                    <!-- reload time input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -55,7 +57,7 @@
                             <label for="reload-time" class="countach-font">Reload Time:</label>
                         </div>
                     </div>
-                    <!-- fire rate -->
+                    <!-- fire rate input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -63,7 +65,7 @@
                             <label for="fire-rate" class="countach-font">Fire Rate:</label>
                         </div>
                     </div>
-                    <!-- magazine size -->
+                    <!-- magazine size input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -71,15 +73,15 @@
                             <label for="magazine-size" class="countach-font">Magazine Size:</label>
                         </div>
                     </div>
-                    <!-- elemental -->
+                    <!-- elemental input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
-                            <input id="elemental" name="elemental" type="text" placeholder='If yes, simply state the type. i.e "Fire" or "Radiation". If no type NO ' class="validate white-text countach-light" required>
+                            <input id="elemental" name="elemental" type="text" placeholder='If yes, state the type(s) with one letter. i.e "F" for fire or "I" for ice. If no type NO ' class="validate white-text countach-light" required>
                             <label for="elemental" class="countach-font">Elemental:</label>
                         </div>
                     </div>
-                    <!-- for trade -->
+                    <!-- for trade input -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="prefix purple-text text-accent-2"></i>
@@ -87,7 +89,7 @@
                             <label for="for-trade" class="countach-font">For Trade:</label>
                         </div>
                     </div>
-                    <!-- create item -->
+                    <!-- form submit (create item) button-->
                     <div class="row">
                         <button type="submit" class="col s12 btn-large purple accent-3 countach-font">
                             Create Item

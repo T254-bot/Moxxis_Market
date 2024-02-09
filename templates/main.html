@@ -1,6 +1,7 @@
 {% extends "base.html"%}
 {% block content %}
 
+    <!-- Landing page -->
     <div class="row landing-bgimg">
         <div class="col s12 landing-header-div countach-font">
             <p class="landing-welcome countach-light white-text text-shadow">Welcome to<h1 class="landing-header white-text text-shadow">Moxxi's Market!</h1></p>
@@ -15,9 +16,11 @@
         </div>
     </div>
 
+    <!-- Latest 6 items to be added to db (header) -->
     <div class="row user-items">
         <p class="col s12 market-text countach-font center-align purple-text">You must be signed in to begin purchasing/trading items!</p>
         <h3 class="col s12 countach-bold center-align purple-text landing-items-header">Here's whats Fresh</h3>
+        <!-- Item card(s) -->
         {% for item in last_six_items %}
             <div class="col s5 m3 l2 item-card card-panel grey darken-3">
                 <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
@@ -34,7 +37,7 @@
                 <!-- Modal button -->
                 <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
 
-                <!-- Modal Structure -->
+                <!-- Item card Modal Structure -->
                 <div id="modal{{ item._id }}" class="modal item-card-modal grey darken-3">
                     <div class="modal-content n-pad">
                         <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
@@ -56,6 +59,7 @@
                         <p class="col s6 item-value-r item-bl item-bb center-align white-text countach-light">{{ item.magazine_size }}</p>
                         <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Trade</p>
                         <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
+                        <!-- Buttons -->
                         <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
                         {% if current_user_email is defined and current_user_email == item.created_by %}
                             <a href="" class="col s4 offset-s4 modal-btn-r red black-text countach-font center-align">Remove</a>

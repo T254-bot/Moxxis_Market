@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Page header -->
 <div class="row">
     <div class="col s12">
         <h1 class="market-header countach-bold center-align purple-text">Step right Up!</h1>
@@ -28,7 +29,7 @@
             <!-- Modal button -->
             <a class="col s12 countach-font purple btn modal-trigger m-item-btn" href="#modal{{ item._id }}">View Details</a>
 
-            <!-- Modal Structure -->
+            <!-- Item card Modal Structure -->
             <div id="modal{{ item._id }}" class="modal item-card-modal grey darken-3">
                 <div class="modal-content n-pad">
                     <p class="item-card-title item-bb center-align purple accent-3 countach-font">{{ item.item_name }}</p>
@@ -50,6 +51,7 @@
                     <p class="col s6 item-value-r item-bl item-bb center-align white-text countach-light">{{ item.magazine_size }}</p>
                     <p class="col s6 item-value-l item-br item-bb center-align countach-light white-text">Trade</p>
                     <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
+                    <!-- Buttons -->
                     <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
                     {% if current_user_email is defined and current_user_email == item.created_by %}
                     <form class="col s4 offset-s4 n-pad" method="POST" action="{{ url_for('delete_item') }}">

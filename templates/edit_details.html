@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="login-bg">
+    <!-- Page header -->
     <div class="row">
         <h1 class="center-align sign-up-header countach-font purple-text">Update your details</h1>
+        <!-- Edit details form -->
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_details') }}">
             <div class="card-panel grey darken-3">
-                <!-- username -->
+                <!-- username input -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fa-solid fa-user-cog prefix purple-text text-accent-2"></i>
@@ -14,7 +16,7 @@
                         <label class="countach-font" for="username">Username</label>
                     </div>
                 </div>
-                <!-- email -->
+                <!-- email input -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fa-solid fa-envelope-open-text prefix purple-text text-accent-2"></i>
@@ -22,7 +24,7 @@
                         <label class="countach-font" for="email">Email Address</label>
                     </div>
                 </div>
-                <!-- password -->
+                <!-- password input -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fa-solid fa-lock prefix purple-text text-accent-2"></i>
@@ -31,7 +33,7 @@
                         <label class="countach-font" for="password">Password</label>
                     </div>
                 </div>
-                <!-- confirm password -->
+                <!-- confirm password input -->
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="fa-solid fa-lock prefix purple-text text-accent-2"></i>
@@ -40,7 +42,7 @@
                         <label for="confirm-password" class="countach-font">Confirm Password</label>
                     </div>
                 </div>
-                <!-- update details -->
+                <!-- form submit (Update details) button -->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large purple accent-3 countach-font">
                         Update details <i class="fas fa-sign-in-alt"></i>

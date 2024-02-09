@@ -11,6 +11,7 @@
 </head>
 <body>
 
+    <!-- Navbar -->
     <header>
         <div class="navbar-fixed">
             <nav>
@@ -32,7 +33,9 @@
                 </div>
             </nav>
         </div>
-        
+
+        <!-- Mobile nav -->
+
         <ul class="sidenav purple darken-1" id="mobile-demo">
             <li><a href="{{ url_for('market_page') }}" class="countach-font m-nav-text m-nav">Market</a></li>
             {% if session.user %}
@@ -58,6 +61,7 @@
         {% endwith %}
     </section>
 
+    <!-- Template Content -->
     {% block content %}
     {% endblock %}
 

@@ -38,8 +38,11 @@ def main_page():
 
 @app.route("/market_page")
 def market_page():
+
+    # grabs all items from db
     items_for_sale = mongo.db.items_for_sale.find()
 
+    # checks if user is logged in and if so grabs email address from mongo
     if "user" in session:
         current_user_email = mongo.db.users.find_one(
             {"username": session["user"]})["email"]
@@ -54,6 +57,7 @@ def market_page():
 def sign_up():
     if request.method == "POST":
 
+        # Grabs passwords from form for validation
         password = request.form.get("password")
         confirm_password = request.form.get("confirm-password")
         
@@ -78,6 +82,7 @@ def sign_up():
             flash("Email address is already in use")
             return redirect(url_for("sign_up"))
 
+        # Builds new user data and inserts into users db collection
         sign_up = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
@@ -145,12 +150,16 @@ def profile():
 @app.route("/profile/edit", methods=["GET", "POST"])
 def edit_details():
     if request.method == "POST":
-        current_user = mongo.db.users.find_one({"username": session["user"]})
 
+        # Grabs users current info from db
+        current_user = mongo.db.users.find_one({"username": session["user"]})
+        
+        # Grabs users new info from form
         new_username = request.form.get("username").lower()
         new_email = request.form.get("email").lower()
         new_password = generate_password_hash(request.form.get("password"))
         
+        # grabs passwords from form for validation 
         password = request.form.get("password")
         confirm_password = request.form.get("confirm-password")
         
@@ -201,9 +210,11 @@ def edit_details():
 def create_item():
     if request.method == "POST":
 
+        # Grabs current users email for use in item data
         user_email = mongo.db.users.find_one(
             {"username": session["user"]})["email"]
 
+        # Builds new item data from form and inserts into items_for_sale db collection
         new_item = {
             "item_name": request.form.get("item-name").lower(),
             "item_score": request.form.get("item-score").lower(),
@@ -248,6 +259,7 @@ def delete_user():
 @app.route("/delete_item", methods=["GET", "POST"])
 def delete_item():
 
+    # Gets item id from html page
     item_id = request.form.get("item-id")
 
     # Checks if the item is in the 'items_for_sale' database
@@ -273,6 +285,7 @@ def delete_item():
 
 @app.route("/move_to_pending", methods=["GET", "POST"])
 def move_to_pending():
+
     # Retrieves the item id from html page and finds item within 'items_for_sale' db
     item_id = request.form.get("item-id")
     item = mongo.db.items_for_sale.find_one({'_id': ObjectId(item_id)})
