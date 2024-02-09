@@ -168,8 +168,12 @@ def profile():
         {"username": session["user"]})["email"]
 
     # grab all items in both dbs
-    items_for_sale = mongo.db.items_for_sale.find()
-    pending_items = mongo.db.pending_items.find()
+    items_for_sale = list(mongo.db.items_for_sale.find())
+    pending_items = list(mongo.db.pending_items.find())
+
+    # Convert cursors to a list
+    #ifs_list = list(items_for_sale)
+    #pi_list = list(pending_items)
 
     if session["user"]:
         return render_template("profile.html", username=username, email=email, items_for_sale=items_for_sale, pending_items=pending_items)
