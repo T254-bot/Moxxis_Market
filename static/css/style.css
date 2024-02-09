@@ -69,7 +69,7 @@
     background-image: url(../images/main-landing-bg-m.jpg);
     background-repeat: no-repeat;
     height: 950px;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
 }
 
 .header-font {
@@ -272,6 +272,18 @@ button {
 .login-header {
     margin: 0 0 2rem 0;
     padding: 4px;
+}
+
+/* ----------------------------------------------------- Footer */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    min-height: 10vh;
 }
 /* ----------------------------------------------------- Media Query's */
 
