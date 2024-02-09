@@ -132,11 +132,12 @@ def profile():
     email = mongo.db.users.find_one(
         {"username": session["user"]})["email"]
 
-    # grab all items in db
+    # grab all items in both dbs
     items_for_sale = mongo.db.items_for_sale.find()
+    pending_items = mongo.db.pending_items.find()
 
     if session["user"]:
-        return render_template("profile.html", username=username, email=email, items_for_sale=items_for_sale)
+        return render_template("profile.html", username=username, email=email, items_for_sale=items_for_sale, pending_items=pending_items)
 
     return redirect(url_for("login"))
 
@@ -283,12 +284,12 @@ def move_to_pending():
         # Remove the item from the items_for_sale collection
         mongo.db.items_for_sale.delete_one({'_id': ObjectId(item_id)})
         flash("You have alerted the seller you are Interested in this item!")
-        return render_template("market.html")
+        return redirect(url_for("market"))
 
     else:
         # Provides the user with error message
         flash("Item could not be found. Please try again later")
-        return render_template("market.html")
+        return redirect(url_for("market"))
 
 
 if __name__ == "__main__":
