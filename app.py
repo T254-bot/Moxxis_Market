@@ -167,16 +167,16 @@ def profile():
     email = mongo.db.users.find_one(
         {"username": session["user"]})["email"]
 
+    # Query the MongoDB collection to find items with the same created_by value that matches current users email
+    ifs_list = list(mongo.db.items_for_sale.find({"created_by": email}))
+    pi_list = matching_items = list(mongo.db.items_for_sale.find({"created_by": email}))
+
     # grab all items in both dbs
     items_for_sale = list(mongo.db.items_for_sale.find())
     pending_items = list(mongo.db.pending_items.find())
 
-    # Convert cursors to a list
-    #ifs_list = list(items_for_sale)
-    #pi_list = list(pending_items)
-
     if session["user"]:
-        return render_template("profile.html", username=username, email=email, items_for_sale=items_for_sale, pending_items=pending_items)
+        return render_template("profile.html", username=username, email=email, items_for_sale=items_for_sale, pending_items=pending_items, ifs_list=ifs_list, pi_list=pi_list)
 
     return redirect(url_for("login"))
 
