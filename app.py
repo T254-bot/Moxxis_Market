@@ -20,6 +20,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/main_page")
 def main_page():
+    """
+    Renders the main page.
+
+    Returns:
+        Rendered template with the main page content.
+    """
     # Checks if user is logged in and if so grabs users email
     if "user" in session:
         current_user_email = mongo.db.users.find_one(
@@ -38,7 +44,12 @@ def main_page():
 
 @app.route("/market_page")
 def market_page():
+    """
+    Renders the market page.
 
+    Returns:
+        Rendered template with the market page content.
+    """
     # grabs all items from db
     items_for_sale = mongo.db.items_for_sale.find()
 
@@ -55,6 +66,13 @@ def market_page():
 
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
+    """
+    Handles user sign-up process.
+
+    Returns:
+        Rendered template for sign-up page or redirects to profile page if sign-up is successful.
+    """
+
     if request.method == "POST":
 
         # Grabs passwords from form for validation
@@ -100,6 +118,12 @@ def sign_up():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    Handles user login process.
+
+    Returns:
+        Rendered template for login page or redirects to profile page if login is successful.
+    """
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -129,6 +153,12 @@ def login():
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
+    """
+    Renders the user profile page.
+
+    Returns:
+        Rendered template with the user profile page content.
+    """
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -149,6 +179,12 @@ def profile():
 
 @app.route("/profile/edit", methods=["GET", "POST"])
 def edit_details():
+    """
+    Handles editing user details.
+
+    Returns:
+        Rendered template for editing details or redirects to profile page if details are updated.
+    """
     if request.method == "POST":
 
         # Grabs users current info from db
@@ -208,6 +244,13 @@ def edit_details():
 
 @app.route("/create_item", methods=["GET", "POST"])
 def create_item():
+    """
+    Handles creation of new items for sale.
+
+    Returns:
+        Rendered template for creating items or redirects to market page if item is created successfully.
+    """
+
     if request.method == "POST":
 
         # Grabs current users email for use in item data
@@ -238,6 +281,12 @@ def create_item():
 
 @app.route("/logout")
 def logout():
+    """
+    Logs out the user.
+
+    Returns:
+        Redirects to the login page after logging out.
+    """
     # logs user out of session cookie
     flash("You have been logged out")
     session.pop("user")
@@ -246,6 +295,12 @@ def logout():
 
 @app.route("/delete_user")
 def delete_user():
+    """
+    Deletes the user.
+
+    Returns:
+        Redirects to the main page after deleting the user.
+    """
     # finds and deletes user from db
     user = mongo.db.users.find_one(
         {"username": session["user"]})
@@ -258,6 +313,12 @@ def delete_user():
 
 @app.route("/delete_item", methods=["GET", "POST"])
 def delete_item():
+    """
+    Deletes an item.
+
+    Returns:
+        Redirects to the profile page after deleting the item.
+    """
 
     # Gets item id from html page
     item_id = request.form.get("item-id")
@@ -285,6 +346,12 @@ def delete_item():
 
 @app.route("/move_to_pending", methods=["GET", "POST"])
 def move_to_pending():
+    """
+    Moves an item to the pending items collection.
+
+    Returns:
+        Redirects to the market page after moving the item.
+    """
 
     # Retrieves the item id from html page and finds item within 'items_for_sale' db
     item_id = request.form.get("item-id")
@@ -303,6 +370,33 @@ def move_to_pending():
         # Provides the user with error message
         flash("Item could not be found. Please try again later")
         return redirect(url_for("market"))
+
+@app.route("/move_to_market", methods=["GET", "POST"])
+def move_to_market():
+    """
+    Moves an item to the items for sale collection.
+
+    Returns:
+        Redirects to the profile page after moving the item.
+    """
+
+    # Retrieves the item id from html page and finds item within pending_items db
+    item_id = request.form.get("item-id")
+    item = mongo.db.pending_items.find_one({'_id': ObjectId(item_id)})
+
+    if item:
+        # Insert the item into the items_for_sale collection
+        mongo.db.items_for_sale.insert_one(item)
+        
+        # Remove the item from the pending_items collection
+        mongo.db.pending_items.delete_one({'_id': ObjectId(item_id)})
+        flash("Item has been placed back on the Market!")
+        return redirect(url_for("profile"))
+
+    else:
+        # Provides the user with error message
+        flash("Item could not be found. Please try again later")
+        return redirect(url_for("profile"))
 
 
 if __name__ == "__main__":
