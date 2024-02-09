@@ -368,12 +368,12 @@ def move_to_pending():
         # Remove the item from the items_for_sale collection
         mongo.db.items_for_sale.delete_one({'_id': ObjectId(item_id)})
         flash("You have alerted the seller you are Interested in this item!")
-        return redirect(url_for("market"))
+        return redirect(url_for("market_page"))
 
     else:
         # Provides the user with error message
         flash("Item could not be found. Please try again later")
-        return redirect(url_for("market"))
+        return redirect(url_for("market_page"))
 
 @app.route("/move_to_market", methods=["GET", "POST"])
 def move_to_market():
