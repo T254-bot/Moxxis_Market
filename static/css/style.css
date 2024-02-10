@@ -76,7 +76,8 @@
 .landing-bgimg {
     background-image: url(../images/main-landing-bg-m.jpg);
     background-repeat: no-repeat;
-    height: 950px;
+    height: 100%;
+    background-size: cover;
     margin: 0 !important;
 }
 
@@ -291,8 +292,18 @@ body {
 
 footer {
     margin-top: auto;
-    min-height: 10vh;
 }
+
+.footer-dis {
+    font-size: 80%;
+}
+
+.footer-icon {
+    font-size: 120%;
+    padding: 5px;
+    margin: 7% 0 0 8%;
+}
+
 /* ----------------------------------------------------- Media Query's */
 
 
@@ -343,6 +354,14 @@ footer {
     .row .col.m3 {
         margin: 2rem 0 1rem 6.3%;
     }
+
+/*-------------------------------- Footer*/
+
+.footer-icon {
+    font-size: 150%;
+    margin: 3% 0 3% 8%;
+}
+
 }
 
 @media (min-width: 992px) {
@@ -351,7 +370,6 @@ footer {
 
     .landing-bgimg {
         background-image: url(../images/main-landing-bg-d.jpg);
-        height: 550px;
     }
 
     .landing-login {

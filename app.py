@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template, 
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from flask_mail import Mail, Message
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -11,8 +12,19 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = os.environ.get("MAIL_USERNAME")
+app.config['MAIL_PASSWORD'] = os.environ.get("MAIL_PASSWORD")
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+
+mail = Mail(app)
+
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config['MAIL_USERNAME'] = os.environ.get("MAIL_USERNAME")
+app.config['MAIL_PASSWORD'] = os.environ.get("MAIL_PASSWORD")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
@@ -26,6 +38,9 @@ def main_page():
     Returns:
         Rendered template with the main page content.
     """
+    msg = Message("A user is interested in your item, Get in contact with them via email to make a deal!", sender = "tylerneale18@gmail.com", recipients=["tylerneale@hotmail.co.uk"])
+    msg.body = "Anything"
+    mail.send(msg)
     # Checks if user is logged in and if so grabs users email
     if "user" in session:
         current_user_email = mongo.db.users.find_one(
