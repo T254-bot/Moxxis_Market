@@ -391,8 +391,9 @@ def move_to_pending():
         # Insert the item into the pending_items collection
         mongo.db.pending_items.insert_one(new_item)
 
+        # Sends the email to the seller
         msg = Message("A user is interested in your item!", sender = user_email , recipients=[item["created_by"]])
-        msg.body = "Reply to this email to begin discussing a price/trade for your item. Just dont forget to remove the item if it sells or re list if you cannot make a deal."
+        msg.body = f"Reply to this email to begin discussing a price/trade for your {item['item_name']}. Just dont forget to remove the item if it sells or re list if you cannot make a deal."
         mail.send(msg)
         
         # Remove the item from the items_for_sale collection
