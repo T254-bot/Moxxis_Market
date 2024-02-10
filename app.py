@@ -363,13 +363,13 @@ def delete_item():
 @app.route("/move_to_pending", methods=["GET", "POST"])
 def move_to_pending():
     """
-    Moves an item to the pending items collection.
+    Moves an item to the pending items collection and send email to seller.
 
     Returns:
         Redirects to the market page after moving the item.
     """
 
-    # Retrieves the item id from html page and finds item within 'items_for_sale' db
+    # Retrieves the item id from html page and finds item within 'items_for_sale' and builds new_item to be placed into 'pending_items'
     item_id = request.form.get("item-id")
     item = mongo.db.items_for_sale.find_one({'_id': ObjectId(item_id)})
     new_item = {
