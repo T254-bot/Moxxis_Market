@@ -38,9 +38,6 @@ def main_page():
     Returns:
         Rendered template with the main page content.
     """
-    msg = Message("A user is interested in your item, Get in contact with them via email to make a deal!", sender = "tylerneale18@gmail.com", recipients=["tylerneale@hotmail.co.uk"])
-    msg.body = "Anything"
-    mail.send(msg)
     # Checks if user is logged in and if so grabs users email
     if "user" in session:
         current_user_email = mongo.db.users.find_one(
@@ -375,10 +372,28 @@ def move_to_pending():
     # Retrieves the item id from html page and finds item within 'items_for_sale' db
     item_id = request.form.get("item-id")
     item = mongo.db.items_for_sale.find_one({'_id': ObjectId(item_id)})
+    new_item = {
+        "item_name": item["item_name"],
+        "item_score": item["item_score"],
+        "damage": item["damage"],
+        "accuracy": item["accuracy"],
+        "handling": item["handling"],
+        "reload_time": item["reload_time"],
+        "fire_rate": item["fire_rate"],
+        "magazine_size": item["magazine_size"],
+        "elemental": item["elemental"],
+        "for_trade": item["for_trade"],
+        "created_by": item["created_by"]
+    }
+    user_email = mongo.db.users.find_one({"username": session["user"]})["email"]
 
     if item:
         # Insert the item into the pending_items collection
-        mongo.db.pending_items.insert_one(item)
+        mongo.db.pending_items.insert_one(new_item)
+
+        msg = Message("A user is interested in your item!", sender = user_email , recipients=[item["created_by"]])
+        msg.body = "Reply to this email to begin discussing a price/trade for your item. Just dont forget to remove the item if it sells or re list if you cannot make a deal."
+        mail.send(msg)
         
         # Remove the item from the items_for_sale collection
         mongo.db.items_for_sale.delete_one({'_id': ObjectId(item_id)})
