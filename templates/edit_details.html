@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="login-bg">
+    <div>
         <!-- Page header -->
         <div class="row">
             <h1 class="center-align sign-up-header countach-font purple-text">Update your details</h1>
             <!-- Edit details form -->
-            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_details') }}">
+            <form class="col s12 m8 offset-m2 create-form" method="POST" action="{{ url_for('edit_details') }}">
                 <div class="card-panel grey darken-3">
                     <!-- username input -->
                     <div class="row">

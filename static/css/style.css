@@ -110,7 +110,7 @@
 }
 
 .landing-login-div {
-    margin: 0 0 0 1rem;
+    margin: 0 0 2em 1em;
 }
 
 .landing-login {
@@ -126,7 +126,7 @@
 
 
 .main-btn {
-    width: 30%;
+    width: fit-content;
     font-size: 20px;
     border-radius: 50px;
 }
@@ -264,15 +264,15 @@ button {
     padding: 4px;
 }
 
+.create-form {
+    margin-bottom: 5%;
+}
+
 .create-text {
     font-size: 20px;
 }
 
 /* ----------------------------------------------------- Login */
-
-.login-bg {
-    height: 50em;
-}
 
 .login-link {
     font-size: 20px;
