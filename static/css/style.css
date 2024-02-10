@@ -295,7 +295,11 @@ footer {
 }
 
 .footer-dis {
-    font-size: 100%;
+    padding-top: 1rem;
+}
+
+.footer-s-text {
+    margin-bottom: 0;
 }
 
 .footer-icon {
