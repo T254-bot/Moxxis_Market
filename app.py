@@ -43,7 +43,7 @@ def main_page():
         current_user_email = mongo.db.users.find_one(
             {"username": session["user"]})["email"]
     else:
-        current_user_email = None
+        None 
 
     # Grab all items_for_sale from the database
     items_cursor = mongo.db.items_for_sale.find()
@@ -385,14 +385,19 @@ def move_to_pending():
         "for_trade": item["for_trade"],
         "created_by": item["created_by"]
     }
-    user_email = mongo.db.users.find_one({"username": session["user"]})["email"]
+    if session["user"]:
+        current_user_email = mongo.db.users.find_one(
+            {"username": session["user"]})["email"]
+    else:
+        flash("You must be logged in to perform this action")
+        return redirect(url_for("market_page"))
 
     if item:
         # Insert the item into the pending_items collection
         mongo.db.pending_items.insert_one(new_item)
 
         # Sends the email to the seller
-        msg = Message("A user is interested in your item!", sender = user_email , recipients=[item["created_by"]])
+        msg = Message("A user is interested in your item!", sender = current_user_email , recipients=[item["created_by"]])
         msg.body = f"Reply to this email to begin discussing a price/trade for your {item['item_name']}. Just dont forget to remove the item if it sells or re list if you cannot make a deal."
         mail.send(msg)
         
@@ -437,4 +442,4 @@ def move_to_market():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)

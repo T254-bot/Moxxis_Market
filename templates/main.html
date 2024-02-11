@@ -61,16 +61,18 @@
                     <p class="col s6 item-value-r item-bl item-bb center-align countach-light white-text text-accent-2">{{ item.for_trade }}</p>
                     <!-- Buttons -->
                     <a href="#!" class="col s4 modal-close modal-btn purple black-text countach-font center-align">Close</a>
-                    {% if current_user_email is defined and current_user_email == item.created_by %}
-                    <form class="col s4 offset-s4 n-pad" method="POST" action="{{ url_for('delete_item') }}">
-                        <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
-                        <button type="submit" class="modal-btn-r red black-text countach-font center-align">Remove</button>
-                    </form>
-                    {% else %}
-                    <form class="col s4 offset-s4 modal-frm" method="POST" action="{{ url_for('move_to_pending') }}">
-                        <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
-                        <button type="submit" class="modal-btn-r green black-text countach-font center-align">Interested</button>
-                    </form>
+                    {% if current_user_email is defined and current_user_email != '' %}
+                        {% if current_user_email == item.created_by %}
+                            <form class="col s4 offset-s4 n-pad" method="POST" action="{{ url_for('delete_item') }}">
+                                <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                                <button type="submit" class="modal-btn-r red black-text countach-font center-align">Remove</button>
+                            </form>
+                        {% else %}
+                            <form class="col s4 offset-s4 modal-frm" method="POST" action="{{ url_for('move_to_pending') }}">
+                                <input id="item-id" name="item-id" type="text" class="hidden" value="{{ item._id }}">
+                                <button type="submit" class="modal-btn-r green black-text countach-font center-align">Interested</button>
+                            </form>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
