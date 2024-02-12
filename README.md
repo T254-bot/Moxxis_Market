@@ -106,11 +106,9 @@ The site makes use of flasks flash messages and uses them regularly to provide t
 
 ### Profile page 
 
-![Profile ss](static/screenshots/profile-ss-i.png)
+![Profile ss](static/screenshots/profile-btns-ss.png)
 
-![Profile ss](static/screenshots/profile-ss-ii.png)
-
-The site allows for full account fuctionality. The user has a login and a sign up page to create and access an account. On the profile page they can then access a page to update all of their details, and a page to create/ list a new item. Also found on the profile page is two section mimicing the market page. One to display the users listed items and the other to display the users items in the 'pending' db.
+The site allows for full account fuctionality. The user has a login and a sign up page to create and access an account. On the profile page they can then see their details, access a page to update all of their details, and a page to create/ list a new item. Also found on the profile page is two section mimicing the market page. One to display the users listed items and the other to display the users items in the 'pending' db.
 
 ![login ss](static/screenshots/login-ss.png)
 
