@@ -51,7 +51,7 @@ def main_page():
     # Convert cursor to a list and reverse it to get the last 6 items
     last_six_items = list(items_cursor)[-6:]
 
-    return render_template("main.html", last_six_items=last_six_items, current_user_email=current_user_email)
+    return render_template("main.html", last_six_items=last_six_items,)
 
 
 @app.route("/market_page")
@@ -442,4 +442,4 @@ def move_to_market():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
