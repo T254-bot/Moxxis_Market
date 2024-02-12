@@ -59,17 +59,17 @@ Below is a grind I have used to check the contrast scores so as to be sure all t
 Here are my wireframes that I created at the start of my project and used as the rough template for my site, for mobile, tablet and desktop viewing. 
 
 * Landing Page
-[Landing page wireframe](static/screenshots/landing-wf.png)
+![Landing page wireframe](static/screenshots/landing-wf.png)
 
 * Market page
-[Market page wireframe](static/screenshots/market-wf.png)
+![Market page wireframe](static/screenshots/market-wf.png)
 
 * Form pages
 When building these wireframes I Knew I was going to bulid all form pages (sign up, login, update details, create item) from one another and therefore there really was no need to make a wireframe for each when the only real difference in the content is how many input fields the form has.
-[Form pages wireframe](static/screenshots/moxxis-forms-wf.png)
+![Form pages wireframe](static/screenshots/moxxis-forms-wf.png)
 
 * Profile page 
-[Profile page wireframe](static/screenshots/moxxis-profile-wf.png)
+![Profile page wireframe](static/screenshots/moxxis-profile-wf.png)
 
 
 # Features
@@ -80,61 +80,61 @@ Below you will find a list of the features currently found on the site, and also
 
 ### Landing Page
 
-[Landing page ss](static/screenshots/landing-ss.png)
+![Landing page ss](static/screenshots/landing-ss.png)
 
 Upon entering the site, the user is greated with a Welcome message and a high res, fan made background image. Immediatley informing them of where they are and triggering a sense of familiarity with people who keep up with the franchise. From there the user can scroll down to find a section mimicing the markets functionality however It is only displaying the most recent 6 weapons to be added to the db, as implied with the header for this section.
 
-[Landing page ss](static/screenshots/landing-cnt-ss.png)
+![Landing page ss](static/screenshots/landing-cnt-ss.png)
 
 ### Market
 
 The market is the main focus of the site. Users can navigate to the market via the navbar found at the top of the page (Originally there was going to be a link with a label found on the landing page. However it made the UI messy wouldve made me have to completley redesign. So instead I relied on the familiarity with the common conventions of web development to help the user advance through the site rather than being immediatley pushed to another page as soon as a page loads). Once here the user is greated with a page header and brief description on the purpose and how to use the functionality of the site. Below this users find the item cards, The window into the database if you will. The page uses jinja2 templating to incorporate for loops directly within the html content and uses this functionality to load as many item cards as is required and populate them with the correct data.
 
-[Market page ss](static/screenshots/market-ss.png)
+![Market page ss](static/screenshots/market-ss.png)
 
 I will also cover the item cards functionality in this section. When clicking on "view details" A modal is displayed to the user with the full data for the weapon (limited amount of room on page caused me to "minify" item card found on page load). If the user was not the one to list the item then they are greeted with a green 'interested' button at the bottom of the modal that will initiate an email being sent to the seller aswell as moving the item to the 'pending_items' db so as to avoid 20 people all fighting over the same item. If you are the seller, you will find that button is red and reads 'remove' and is used to delete the item from wherever it is. And if the seller looks at an item in the pending db, they will also find a blue button to 're list' the item and put it back in the main db.
 
-[item card ss](static/screenshots/Screenshot%202024-02-11%20122657.png)
+![item card ss](static/screenshots/Screenshot%202024-02-11%20122657.png)
 
-[item card ss](static/screenshots/Screenshot%202024-02-11%20122723.png)
+![item card ss](static/screenshots/Screenshot%202024-02-11%20122723.png)
 
 ### Flash messsages
 
 The site makes use of flasks flash messages and uses them regularly to provide the user with feedback on their actions or to warn the user of an error.
 
-[flash messages ss](static/screenshots/flash-ss.png)
+![flash messages ss](static/screenshots/flash-ss.png)
 
 ### Profile page 
 
-[Profile ss](static/screenshots/profile-ss-i.png)
+![Profile ss](static/screenshots/profile-ss-i.png)
 
-[Profile ss](static/screenshots/profile-ss-ii.png)
+![Profile ss](static/screenshots/profile-ss-ii.png)
 
 The site allows for full account fuctionality. The user has a login and a sign up page to create and access an account. On the profile page they can then access a page to update all of their details, and a page to create/ list a new item. Also found on the profile page is two section mimicing the market page. One to display the users listed items and the other to display the users items in the 'pending' db.
 
-[login ss](static/screenshots/login-ss.png)
+![login ss](static/screenshots/login-ss.png)
 
-[signup ss](static/screenshots/signup-ss.png)
+![signup ss](static/screenshots/signup-ss.png)
 
-[create ss](static/screenshots/create-ss.png)
+![create ss](static/screenshots/create-ss.png)
 
-[update ss](static/screenshots/Screenshot%202024-02-11%20130851.png)
+![update ss](static/screenshots/Screenshot%202024-02-11%20130851.png)
 
 ### Nav bar
 
 The site features a fully responive fixed navbar, that converts to a side-nav at the apporpriate screen sizes. Foubd on the nav bar is also the sites logo that acts as a short cut back to the home/landing page.
 
-[navbar ss](static/screenshots/nav-ss.png)
+![navbar ss](static/screenshots/nav-ss.png)
 
-[mobile nav ss](static/screenshots/mnavb-ss.png)
+![mobile nav ss](static/screenshots/mnavb-ss.png)
 
-[Mobile sidenav ss](static/screenshots/mnav-ss.png)
+![Mobile sidenav ss](static/screenshots/mnav-ss.png)
 
 ### Footer
 
 The site also has a small footer, fixed to the bottom of the page that contains a small disclaimer and social links that will just take the user straight to the home pages for the socials.
 
-[Footer ss](static/screenshots/footer-ss.png)
+![Footer ss](static/screenshots/footer-ss.png)
 
 ## Future Updates
 
@@ -171,7 +171,12 @@ I began testing the responsiveness of the site firstly by switching through diff
 
 ### HTML Validator
 
-I was abit confused, as the project requirements state we are to validate the html. However putting thid html through a validator thrown all kind of errors and warnings due to the flask and jinja2 mixed in aswell as only one page having head and body elements. Therefore I decided not to bother uploading the screenshots of these errors as It would take far to many to show every error and confirm the only errors there are due to the nature of the application. I have checked as througly as I can and have only found errors relating to the things stated above.
+![HTML Validator results](static/screenshots/moxxis-html-ss.png)
+
+The only two errors encountered where these.
+* The first error is due to the section containing flash messages not having a header. Given the nature of the flash messages and the fact that styling had already been done on the p element found there I decided to leave it as is.
+
+* The second error is caused by a trailing closing p tag left in error when changing the title/header of 'main.html' from a p to a h1 element. As this was such an easy fix and there where only two errors I have just used my first screenshot of the validator.
 
 ### CSS Validator Results:
 
@@ -196,22 +201,22 @@ Given the fact each weapon has an identical set of information with varying valu
 * As a player that is new to the game, I want to be able to see the latest weapons to be listed.
     * Upon landing on the page, the user can scroll down and see the last 6 items to be listed on the site.
 
-[screenshot](static/screenshots/landing-cnt-ss.png)
+![screenshot](static/screenshots/landing-cnt-ss.png)
 
 * As a current player I want to be able to easily let the seller of an item know that I am interested.
     * When viewing the full item card, Clicking the interested button will alert the seller that you are interested in their item via email.
 
-[screenshot](static/screenshots/Screenshot%202024-02-11%20122657.png)
+![screenshot](static/screenshots/Screenshot%202024-02-11%20122657.png)
 
 * As an current player, I want to be able to quickly find my weapons that I have listed and that other users are interested in.
     * Navigate to your profile page and scroll down to find a section that displays all the users items currently in the 'pending' db.
 
-[screenshot](static/screenshots/profile-ss-i.png)
+![screenshot](static/screenshots/profile-ss-i.png)
 
 * As a frequent user of the site, I want to be able to easily update my account details and As an older player, I want to be able to easily delete my account.
     * Navigate to the profile page and the user is immediatley greeted with a series of buttons with labels displaying there use.
 
-[screenshot](static/screenshots/profile-btns-ss.png)
+![screenshot](static/screenshots/profile-ss-ii.png)
 
 ## Bug Report:
 
