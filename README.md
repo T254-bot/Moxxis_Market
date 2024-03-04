@@ -193,6 +193,12 @@ The only two errors encountered where these.
 
 Given the fact each weapon has an identical set of information with varying values. I kept the db nice and simplistic. Having two dbs for items (one to store the items for sale, the other to store pending items before re listing or deletion from the db) and another to contain the user info for the account functionality. I decided to use mongoDB as I had an easier time setting it up and understanding the UI aswell as feeling more comfortable and confident using data in a JSON format.
 
+### The Data Schema: 
+
+![screenshot](static/screenshots/moxxis-colorgrid.png)
+
+Before creating any item data, The user must first create an account and by extension create data for the 'users' db. All input fields are required including Email. Which, once an account has been created, is how the users item data is linked to their account. When you create the item, python builds the data from the forms inputs and adds one more key value pair. The key being 'created_by' and the value, pulling the users email from the 'users' db. When moving an item to and from the 'pending' db, python takes all the items values (not including the id) and uses it to build a completley new item in the other db, and deleting the existing item from the db it is stored in.
+
 
 ## The User Stories:
 
