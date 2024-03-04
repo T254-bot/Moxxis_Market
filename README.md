@@ -195,7 +195,7 @@ Given the fact each weapon has an identical set of information with varying valu
 
 ### The Data Schema: 
 
-![screenshot](static/screenshots/moxxis-colorgrid.png)
+![screenshot](static/screenshots/moxxi-dbs.png)
 
 Before creating any item data, The user must first create an account and by extension create data for the 'users' db. All input fields are required including Email. Which, once an account has been created, is how the users item data is linked to their account. When you create the item, python builds the data from the forms inputs and adds one more key value pair. The key being 'created_by' and the value, pulling the users email from the 'users' db. When moving an item to and from the 'pending' db, python takes all the items values (not including the id) and uses it to build a completley new item in the other db, and deleting the existing item from the db it is stored in.
 
