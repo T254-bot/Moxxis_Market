@@ -19,7 +19,6 @@
 
 # Site Overview 
 
-User
 Moxxi's market is a website/application created for the purpose of utilizing the ability to send weapons between players in the popular video game, Borderlands 3. Based largely off of a character from the game, the aim of the sites styling and choice in text is to feel very much like part of the world players love exploring. The site acts as a trading hub of sorts, where users are able to create an account and list weapons from the game by filling out the information into a form. From there, the user is able to find and remove the item from their profile page. Or check out the market and see what other people have listed. Given that I have not yet learned anything to do with payments, the site goal is to simply connect the two parties (buyer and seller) via an automated email to the seller once the buyer clicks on the "interested" button on the item card.
 
 # Planning 
@@ -38,7 +37,7 @@ Moxxi's market is a website/application created for the purpose of utilizing the
 
 * As a current player I want to be able to easily let the seller of an item know that I am interested.
 
-* As an current player, I want to be able to quickly find my weapons that I have listed and that other users are interested in.
+* As a current player, I want to be able to quickly find my weapons that I have listed and that other users are interested in.
 
 * As a frequent user of the site, I want to be able to easily update my account details.
 
@@ -48,7 +47,7 @@ Moxxi's market is a website/application created for the purpose of utilizing the
 
 The color scheme I have gone for takes alot of inspiration from the character 'Moxxi' from the borderlands franchise. I went for alot of vibrant purples and used white and dark greys to add the needed contrast to the site. The form pages (sign up, login, update details, create item) have been changed as originally I planned on making them mimic the game menus alot more. However the plan involved darker greys being the main colors with blue accenting the page, and when building my wireframes I realised looked very out of place compared to the rest of the site. So i changed the color scheme to match the rest of the site. I also planned on more pages having background images. But decided to not as I could not find what I was looking for, so stuck with white for the rest.
 
-Below is a grind I have used to check the contrast scores so as to be sure all text remains readable throughout the site, created on hhttps://contrast-grid.eightshapes.com/ .
+Below is a grind I have used to check the contrast scores so as to be sure all text remains readable throughout the site, created on https://contrast-grid.eightshapes.com/ .
 
 ![Color grid screenshot](static/screenshots/moxxis-colorgrid.png)
 
